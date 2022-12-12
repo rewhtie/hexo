@@ -109,8 +109,14 @@ deploy:
   repo: https://github.com/rewhtie/hexo.git
   branch: master
 
-# sitemap:
-#     path: sitemap.xml
+Plugins:
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
+baidusitemap:
+    path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
   
 jsonContent:
     meta: false
