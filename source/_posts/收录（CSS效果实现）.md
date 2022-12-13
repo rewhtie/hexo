@@ -13,7 +13,7 @@ CSS骚操作，拒绝调教
 
 >CSS 单行隐藏溢出元素（正常使用 overflow:hideen 会出现一种尴尬的场面，元素展示了一半，需要利用弹性布局来完美实现）
 
-![](https://gitee.com/lin-mingqi/image/raw/master/%E6%8D%A2%E8%A1%8C%E6%95%88%E6%9E%9C%E5%89%8D.png)
+![](http://linmingqi.top/img/%E6%8D%A2%E8%A1%8C%E6%95%88%E6%9E%9C%E5%89%8D.png)
 ```css
 .tag {
   overflow: hidden;
@@ -21,8 +21,7 @@ CSS骚操作，拒绝调教
 }
 ```
 
-![](https://gitee.com/lin-mingqi/image/raw/master/%E6%8D%A2%E8%A1%8C%E6%95%88%E6%9E%9C%E5%90%8E.png)
-
+![](http://linmingqi.top/img/%E6%8D%A2%E8%A1%8C%E6%95%88%E6%9E%9C%E5%90%8E.png)
 ```css
 .tag {
   display: flex;

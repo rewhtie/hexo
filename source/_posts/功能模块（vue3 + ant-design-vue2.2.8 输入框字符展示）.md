@@ -19,5 +19,5 @@ ant-design-vue: "^2.2.8" （showCount是否展示字数）这个api无法生效;
 />
 ```
 
-![](https://gitee.com/lin-mingqi/image/raw/master/%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E5%B1%95%E7%A4%BA.png)
+![](http://linmingqi.top/img/%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E5%B1%95%E7%A4%BA.png)
 <!-- more -->
