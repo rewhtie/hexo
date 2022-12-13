@@ -11,18 +11,18 @@
   <meta name="description" content="H5 微信支付有两种形式：微信扫码（微信内置浏览器环境）拉起公众号支付 ； 外部浏览器拉起微信小程序支付">
 <meta property="og:type" content="article">
 <meta property="og:title" content="H5 微信支付">
-<meta property="og:url" content="https://github.com/rewhtie/hexo/2022/12/08/H5%EF%BC%88%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%89/index.html">
+<meta property="og:url" content="https://github.com/rewhtie/hexo/2022/12/12/H5%EF%BC%88%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%89/index.html">
 <meta property="og:site_name" content="BlueEyes">
 <meta property="og:description" content="H5 微信支付有两种形式：微信扫码（微信内置浏览器环境）拉起公众号支付 ； 外部浏览器拉起微信小程序支付">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/lin-mingqi/image/raw/master/%E9%9D%99%E6%80%81h5%E6%89%93%E5%BC%80%E5%B0%8F%E7%A8%8B%E5%BA%8F.png">
-<meta property="og:image" content="https://gitee.com/lin-mingqi/image/raw/master/%E4%BA%91%E5%87%BD%E6%95%B0%E5%BC%82%E5%B8%B8504002.png">
-<meta property="article:published_time" content="2022-12-08T10:14:31.561Z">
-<meta property="article:modified_time" content="2022-12-12T02:38:46.521Z">
+<meta property="og:image" content="http://linmingqi.top/img/%E9%9D%99%E6%80%81h5%E6%89%93%E5%BC%80%E5%B0%8F%E7%A8%8B%E5%BA%8F.png">
+<meta property="og:image" content="http://linmingqi.top/img/%E4%BA%91%E5%87%BD%E6%95%B0%E5%BC%82%E5%B8%B8504002.png">
+<meta property="article:published_time" content="2022-12-12T03:34:12.686Z">
+<meta property="article:modified_time" content="2022-12-13T01:35:58.349Z">
 <meta property="article:author" content="青眼魔术">
 <meta property="article:tag" content="H5">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/lin-mingqi/image/raw/master/%E9%9D%99%E6%80%81h5%E6%89%93%E5%BC%80%E5%B0%8F%E7%A8%8B%E5%BA%8F.png">
+<meta name="twitter:image" content="http://linmingqi.top/img/%E9%9D%99%E6%80%81h5%E6%89%93%E5%BC%80%E5%B0%8F%E7%A8%8B%E5%BA%8F.png">
   
     <link rel="alternative" href="/atom.xml" title="BlueEyes" type="application/atom+xml">
   
@@ -68,9 +68,9 @@
 			</ul>
 		</nav>
     <nav>
-        总文章数：56
+        总文章数：57
         <br />
-        总字数:40k
+        总字数:40.7k
         <br />
         <!-- <span id="busuanzi_container_site_pv">总访问量:<span id="busuanzi_value_site_pv"></span> -->
         <!-- <br /> -->
@@ -189,8 +189,8 @@
         
         <!--显示阅读次数完毕-->
         
-        <a href="/hexo/2022/12/08/H5%EF%BC%88%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-12-08T10:14:31.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-08</time>
+        <a href="/hexo/2022/12/12/H5%EF%BC%88%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-12-12T03:34:12.686Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-12</time>
 </a>
         
       </header>
@@ -217,7 +217,7 @@
 <h3 id="微信小程序支付-（外部通过云函数跳转小程序）"><a href="#微信小程序支付-（外部通过云函数跳转小程序）" class="headerlink" title="微信小程序支付 （外部通过云函数跳转小程序）"></a>微信小程序支付 （外部通过云函数跳转小程序）</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/staticstorage/jump-miniprogram.html">静态网站H5打开小程序官网文档</a></p>
 </blockquote>
-<p><img src="https://gitee.com/lin-mingqi/image/raw/master/%E9%9D%99%E6%80%81h5%E6%89%93%E5%BC%80%E5%B0%8F%E7%A8%8B%E5%BA%8F.png"></p>
+<p><img src="http://linmingqi.top/img/%E9%9D%99%E6%80%81h5%E6%89%93%E5%BC%80%E5%B0%8F%E7%A8%8B%E5%BA%8F.png"></p>
 <font color="red">
 问题一：微信扫码静态网站H5进行跳转小程序传参会丢失(不知道为啥会丢失)
 </font>
@@ -234,7 +234,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">onLoad</span>(<span class="params">options</span>)</span> &#123; </span><br><span class="line">  <span class="keyword">const</span> &#123; referrerInfo, scene &#125; = wx.getEnterOptionsSync()</span><br><span class="line">  <span class="built_in">console</span>.log(scene, <span class="string">&#x27;scene场景值&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><font color="#48c9b0">补充：这里涉及到小程序的冷启动和热启动的概念（后台最多两个小时），<font color="red">首次进入小程序冷启动会触发</font> app.js 中的 onLaunch 和 wx.getLaunchOptionsSync() ，<font color="red">后台切换进入是热启动不会触发</font> onLaunch 和 wx.getLaunchOptionsSync 了，要想获取第二次的数据只能通过 wx.getEnterOptionsSync() 获取</font></p>
 <p><font color="red">问题三：静态网站H5跳转云函数页面打开小程序报错、异常(errCode 40165)</font></p>
-<p><img src="https://gitee.com/lin-mingqi/image/raw/master/%E4%BA%91%E5%87%BD%E6%95%B0%E5%BC%82%E5%B8%B8504002.png"></p>
+<p><img src="http://linmingqi.top/img/%E4%BA%91%E5%87%BD%E6%95%B0%E5%BC%82%E5%B8%B8504002.png"></p>
 <p><font color="blue">（解决：小程序正式版必须已经有这个路径，没有就会报错）</font></p>
 <font color="red">
 问题四：小程序支付，只需要对应的api（wx.requestPayment）详细看文档</font>
@@ -341,7 +341,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lin-mingqi.gitee.ioewhtie/hexo/2022/12/08/H5%EF%BC%88%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%89/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lin-mingqi.gitee.ioewhtie/hexo/2022/12/12/H5%EF%BC%88%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -356,18 +356,18 @@
   
 <nav id="article-nav">
   
-    <a href="/hexo/2022/12/08/H5%EF%BC%88%E7%8E%AF%E5%A2%83%E8%AF%86%E5%88%AB%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hexo/2022/12/12/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%EF%BC%88vue3%20+%20ant-design-vue2.2.8%20%E8%BE%93%E5%85%A5%E6%A1%86%E5%AD%97%E7%AC%A6%E5%B1%95%E7%A4%BA%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          H5 判断当前环境
+          vue2 + ant-design-vue2.2.8 输入框字符长度展示
         
       </div>
     </a>
   
   
-    <a href="/hexo/2022/12/08/H5%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">H5 支付宝支付</div>
+    <a href="/hexo/2022/12/09/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%EF%BC%88vue2%20+%20vant2.0%20%E5%BC%B9%E7%AA%97%E7%A1%AE%E8%AE%A4%E5%BC%82%E6%AD%A5loading%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue2 + vant2.0 弹窗确认实现异步loading 组件</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -569,6 +569,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">高薪之路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目搭建</a>
               </li>
             
             <div class="clearfix"></div>
