@@ -1,7 +1,6 @@
 ---
-layout: post
 title: H5（CSS兼容语法适配）
-date: 2022-12-14 14:07:20
+data: 2022-12-14 14：07：20
 tags: 
   - CSS
   - H5
