@@ -1,11 +1,10 @@
 ---
-layout: post
 title: hexo（文章排序不生效）
 date: 2022-12-14 18:03:40
 tags: hexo
 ---
 
-
+md文件内 设置了date 时间，但是时间排序还是依然不生效
 
 <!-- more -->
 
@@ -13,6 +12,7 @@ tags: hexo
 
 - 找到node_moudles 模块下 hexo-generator-index 文件夹 lib 下的 generator.js [官网插件](https://hexo.io/plugins/)
 - 直接用以下的代码覆盖替换
+- 也可以通过 patch-package 插件实现（贼坑爹，治标不治本）
 
 ```js
 'use strict';
