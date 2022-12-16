@@ -8,7 +8,7 @@ md文件内 设置了date 时间，但是时间排序还是依然不生效
 
 <!-- more -->
 
-> 文章设置date时间，但是实际排序不生效（不是版本问题，不是date、data字段错误问题，其他依赖依旧没用）
+> 文章设置date时间，但是实际排序不生效（不是版本问题，不是date、data字段错误问题，官网其他依赖插件依旧没用）
 
 - 找到node_moudles 模块下 hexo-generator-index 文件夹 lib 下的 generator.js [官网插件](https://hexo.io/plugins/)
 - 直接用以下的代码覆盖替换
