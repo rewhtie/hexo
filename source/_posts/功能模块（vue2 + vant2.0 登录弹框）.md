@@ -9,8 +9,12 @@ vue2.0 + vant2.0(button按钮、Totast轻提示) 实现登录获取验证码, �
 <!-- more -->
 ```html
 <template>
-  <div class="ensd__login flex__center__center" v-if="show">
-    <div class="ensd__login__content flex__column-center__center">
+  <div
+    class="ensd__login flex__center__center"
+    @click="show = false"
+    v-if="show"
+  >
+    <div class="ensd__login__content flex__column-center__center" @click.stop>
       <div class="ensd__login__title">登 录</div>
       <div class="ensd__login__box">
         <input
@@ -26,7 +30,6 @@ vue2.0 + vant2.0(button按钮、Totast轻提示) 实现登录获取验证码, �
           @focus="focus = 'phone'"
         />
         <div class="ensd__login__icon" @click="phone = ''">
-          <!-- 这里svg相当于一个img，是一个清除的图标 -->
           <ensdIconsvg name="clear" size="14" />
         </div>
       </div>
@@ -73,24 +76,17 @@ vue2.0 + vant2.0(button按钮、Totast轻提示) 实现登录获取验证码, �
 ```
 
 ```js
-<script>
 import ensdIconsvg from "@/components/iconsvg";
+import api from "@/api";
 import { Toast } from "vant";
 import { Button } from "vant";
+import { osType } from "@/utils/index";
+import { localStorage } from "@/utils/localStorage";
+
 export default {
   components: {
     ensdIconsvg,
     [Button.name]: Button
-  },
-  model: {
-    prop: "show",
-    event: "setShow"
-  },
-  props: {
-    show: {
-      type: Boolean,
-      default: false
-    }
   },
   watch: {
     phone(newVal) {
@@ -110,42 +106,59 @@ export default {
   },
   data() {
     return {
+      show: false,
       phone: "",
       code: "",
-      count: 3,
+      count: 60,
       timer: null,
       flag: false,
       loading: false,
-      focus: ""
+      focus: "",
+      next: () => {}
     };
   },
   methods: {
     // 获取验证码
     async getPhoneCode() {
       if (this.code_btn) {
-        this.flag = true;
-        this.timer = setInterval(() => {
-          this.count--;
-          if (this.count == 0) {
-            this.flag = false;
-            clearInterval(this.timer);
-            this.count = 6;
-          }
-        }, 1000);
+        const { code } = await api.login.getNoteForLogin({
+          phone: this.phone
+        });
+        if (code === 200) {
+          this.flag = true;
+          this.timer = setInterval(() => {
+            this.count--;
+            if (this.count == 0) {
+              this.flag = false;
+              clearInterval(this.timer);
+              this.count = 60;
+            }
+          }, 1000);
+        }
       }
     },
     // 登录按钮
     async login() {
       if (this.login_btn) {
         this.loading = true;
-        setTimeout(() => {
+        try {
+          const { data } = await apiFn({
+            phone: this.phone,
+            smsCode: this.code,
+          });
           this.loading = false;
-        }, 2000);
-        // this.setShow();
+          this.show = false;
+          localStorage.set("userInfo", data);
+          this.next();
+        } catch (err) {
+          this.loading = false;
+        }
       }
     },
-    setShow() {
-      this.$emit("setShow", false);
+    // 外部调用open方法传入箭头函数，实现登录之后的操作，默认是刷新页面，可以在指定的路由路径做对应的相关操作（作为回调函数传入）
+    open(next = () => {}) {
+      this.show = true;
+      this.next = next;
     }
   },
   computed: {
@@ -175,11 +188,9 @@ export default {
     }
   }
 };
-</script>
 ```
 
 ```css
-<style lang="less" scoped>
 ::-webkit-input-placeholder {
   font-size: 14px;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -194,6 +205,7 @@ export default {
   bottom: 0;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
   &__content {
     background-color: #fff;
     width: 320px;
@@ -274,7 +286,6 @@ export default {
     opacity: 1;
   }
 }
-</style>
 ```
 
 <!-- more -->
