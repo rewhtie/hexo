@@ -62,9 +62,9 @@
 			</ul>
 		</nav>
     <nav>
-        总文章数：63
+        总文章数：64
         <br />
-        总字数:43.2k
+        总字数:44k
         <br />
         <!-- <span id="busuanzi_container_site_pv">总访问量:<span id="busuanzi_value_site_pv"></span> -->
         <!-- <br /> -->
@@ -161,6 +161,96 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-功能模块（签名生成图片）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexo/2023/01/13/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%EF%BC%88%E7%AD%BE%E5%90%8D%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%EF%BC%89/">功能模块（签名生成图片）</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+        
+        <!--显示阅读次数完毕-->
+        
+        <a href="/hexo/2023/01/13/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%EF%BC%88%E7%AD%BE%E5%90%8D%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2023-01-13T06:04:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-13</time>
+</a>
+        
+      </header>
+    
+    <!-- <div align="right" class="post-count"> -->
+      <!-- 字数：775字 | 预计阅读时长：3分钟</div> -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<p>canvas画布签名生成图片 （PC端可用）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;cancel()&quot;</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;save()&quot;</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 配置内容</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> config = &#123;</span></span><br><span class="line"><span class="javascript">        width: <span class="number">400</span>, <span class="comment">// 宽度</span></span></span><br><span class="line"><span class="javascript">        height: <span class="number">200</span>, <span class="comment">// 高度</span></span></span><br><span class="line"><span class="javascript">        lineWidth: <span class="number">5</span>, <span class="comment">// 线宽</span></span></span><br><span class="line"><span class="javascript">        strokeStyle: <span class="string">&#x27;red&#x27;</span>, <span class="comment">// 线条颜色</span></span></span><br><span class="line"><span class="javascript">        lineCap: <span class="string">&#x27;round&#x27;</span>, <span class="comment">// 设置线条两端圆角</span></span></span><br><span class="line"><span class="javascript">        lineJoin: <span class="string">&#x27;round&#x27;</span>, <span class="comment">// 线条交汇处圆角</span></span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 获取canvas 实例</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;canvas&#x27;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 设置宽高</span></span></span><br><span class="line">    canvas.width = config.width</span><br><span class="line">    canvas.height = config.height</span><br><span class="line"><span class="javascript">    <span class="comment">// 设置一个边框</span></span></span><br><span class="line"><span class="javascript">    canvas.style.border = <span class="string">&#x27;1px solid #000&#x27;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 创建上下文</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">&#x27;2d&#x27;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 设置填充背景色</span></span></span><br><span class="line"><span class="javascript">    ctx.fillStyle = <span class="string">&#x27;transparent&#x27;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 绘制填充矩形</span></span></span><br><span class="line">    ctx.fillRect(</span><br><span class="line"><span class="javascript">        <span class="number">0</span>, <span class="comment">// x 轴起始绘制位置</span></span></span><br><span class="line"><span class="javascript">        <span class="number">0</span>, <span class="comment">// y 轴起始绘制位置</span></span></span><br><span class="line"><span class="javascript">        config.width, <span class="comment">// 宽度</span></span></span><br><span class="line"><span class="javascript">        config.height <span class="comment">// 高度</span></span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 保存上次绘制的 坐标及偏移量</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> client = &#123;</span></span><br><span class="line"><span class="javascript">        offsetX: <span class="number">0</span>, <span class="comment">// 偏移量</span></span></span><br><span class="line">        offsetY: 0,</span><br><span class="line"><span class="javascript">        endX: <span class="number">0</span>, <span class="comment">// 坐标</span></span></span><br><span class="line">        endY: 0</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 判断是否为移动端</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> mobileStatus = (<span class="regexp">/Mobile|Android|iPhone/i</span>.test(navigator.userAgent))</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 初始化</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> init = <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 获取偏移量及坐标</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> &#123; offsetX, offsetY, pageX, pageY &#125; = mobileStatus ? event.changedTouches[<span class="number">0</span>] : event </span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// 修改上次的偏移量及坐标</span></span></span><br><span class="line">        client.offsetX = offsetX</span><br><span class="line">        client.offsetY = offsetY</span><br><span class="line">        client.endX = pageX</span><br><span class="line">        client.endY = pageY</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// 清除以上一次 beginPath 之后的所有路径，进行绘制</span></span></span><br><span class="line">        ctx.beginPath()</span><br><span class="line"><span class="javascript">        <span class="comment">// 根据配置文件设置相应配置</span></span></span><br><span class="line">        ctx.lineWidth = config.lineWidth</span><br><span class="line">        ctx.strokeStyle = config.strokeStyle</span><br><span class="line">        ctx.lineCap = config.lineCap</span><br><span class="line">        ctx.lineJoin = config.lineJoin</span><br><span class="line"><span class="javascript">        <span class="comment">// 设置画线起始点位</span></span></span><br><span class="line">        ctx.moveTo(client.endX, client.endY)</span><br><span class="line"><span class="javascript">        <span class="comment">// 监听 鼠标移动或手势移动</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.addEventListener(mobileStatus ? <span class="string">&quot;touchmove&quot;</span> : <span class="string">&quot;mousemove&quot;</span>, draw)</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">// 绘制</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> draw = <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 获取当前坐标点位</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> &#123; pageX, pageY &#125; = mobileStatus ? event.changedTouches[<span class="number">0</span>] : event</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 修改最后一次绘制的坐标点</span></span></span><br><span class="line">        client.endX = pageX</span><br><span class="line">        client.endY = pageY</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// 根据坐标点位移动添加线条</span></span></span><br><span class="line">        ctx.lineTo(pageX , pageY )</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// 绘制</span></span></span><br><span class="line">        ctx.stroke()</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">// 结束绘制</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> cloaseDraw = <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 结束绘制</span></span></span><br><span class="line">        ctx.closePath()</span><br><span class="line"><span class="javascript">        <span class="comment">// 移除鼠标移动或手势移动监听器</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.removeEventListener(<span class="string">&quot;mousemove&quot;</span>, draw)</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">// 创建鼠标/手势按下监听器</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(mobileStatus ? <span class="string">&quot;touchstart&quot;</span> : <span class="string">&quot;mousedown&quot;</span>, init)</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 创建鼠标/手势 弹起/离开 监听器</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(mobileStatus ? <span class="string">&quot;touchend&quot;</span> :<span class="string">&quot;mouseup&quot;</span>, cloaseDraw)</span></span><br><span class="line">    </span><br><span class="line"><span class="javascript">    <span class="comment">// 取消-清空画布</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> cancel = <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 清空当前画布上的所有绘制内容</span></span></span><br><span class="line">        ctx.clearRect(0, 0, config.width, config.height)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">// 保存-将画布内容保存为图片</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> save = <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 将canvas上的内容转成blob流</span></span></span><br><span class="line"><span class="javascript">        canvas.toBlob(<span class="function"><span class="params">blob</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 获取当前时间并转成字符串，用来当做文件名</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> date = <span class="built_in">Date</span>.now().toString()</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 创建一个 a 标签</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 设置 a 标签的下载文件名</span></span></span><br><span class="line"><span class="javascript">            a.download = <span class="string">`<span class="subst">$&#123;date&#125;</span>.png`</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 设置 a 标签的跳转路径为 文件流地址</span></span></span><br><span class="line">            a.href = URL.createObjectURL(blob)</span><br><span class="line"><span class="javascript">            <span class="comment">// 手动触发 a 标签的点击事件</span></span></span><br><span class="line">            a.click()</span><br><span class="line"><span class="javascript">            <span class="comment">// 移除 a 标签</span></span></span><br><span class="line">            a.remove()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<!-- more -->
+      
+      <!-- 添加版权声明 -->
+      
+          
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">功能模块</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/hexo/2023/01/13/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%EF%BC%88%E7%AD%BE%E5%90%8D%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-H5（助力活动）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -927,93 +1017,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/hexo/2022/12/12/%E9%AB%98%E8%96%AA%EF%BC%88vue2%E5%92%8Cvue3%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-收录（树莓派建站）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexo/2022/12/12/%E6%94%B6%E5%BD%95%EF%BC%88%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%BA%E7%AB%99%EF%BC%89/">树莓派的搭建</a>
-    </h1>
-  
-
-        <!--显示阅读次数-->
-        
-        <!--显示阅读次数完毕-->
-        
-        <a href="/hexo/2022/12/12/%E6%94%B6%E5%BD%95%EF%BC%88%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%BA%E7%AB%99%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-12-12T03:34:12.799Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-12</time>
-</a>
-        
-      </header>
-    
-    <!-- <div align="right" class="post-count"> -->
-      <!-- 字数：2.3k字 | 预计阅读时长：8分钟</div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>树莓派搭建web服务</p>
-        
-      
-      <!-- 添加版权声明 -->
-      
-          
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">收录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/hexo/2022/12/12/%E6%94%B6%E5%BD%95%EF%BC%88%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%BA%E7%AB%99%EF%BC%89/">展开全文 >></a>
         </p>
       
 
