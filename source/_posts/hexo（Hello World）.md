@@ -59,7 +59,15 @@ deploy:
   branch: master
 ```
 
-无法上传theme主题文件夹到github上，[上传theme主题](https://zhuanlan.zhihu.com/p/349280018)
+无法上传theme主题文件夹到github上
+
+``` bash
+# 先从暂存区删除
+$ git rm --cache themes/hexo-theme-icarus
+```
+之后在theme对应文件夹下.gitignore清空，之后重新上传解决
+
+[上传theme主题指南](https://zhuanlan.zhihu.com/p/349280018)
 
 ## hexo插件依赖问题
 
