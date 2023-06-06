@@ -9,8 +9,6 @@ tags:
 
 <!-- more -->
 
-## 项目配置
-
 #### 1.新建flex样式 plugin/flex.js 文件
 
 ```js

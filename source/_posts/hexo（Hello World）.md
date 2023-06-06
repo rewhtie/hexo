@@ -49,6 +49,8 @@ $ hexo deploy
 
 ## gitee部署
 
+这里最好部署是master分支，开发是dev分支
+
 ``` bash
 # blog根目录_connfig.yml
 deploy:
