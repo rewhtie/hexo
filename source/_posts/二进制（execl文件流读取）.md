@@ -8,13 +8,12 @@ tags:
 execl二进制文件流读取；本地execl读取数据
 
 <!-- more -->
-<font color="#08c" size=3>1.安装依赖</font>
+## 1.安装依赖
 ```js
 npm install xlsx
 npm run axios
 ```
-</br>
-<font color="#08c" size=3>2.先用axios获取xlsx二进制数据，再转成html</font>
+## 2.先用axios获取xlsx二进制数据，再转成html
 
 ```js
 import xlsxStyle from './xlsxStyle';	//  html 样式标，见下方
@@ -41,8 +40,8 @@ const xlsx2html = async (url) => {
 
 xlsx2html('http://6c8b8fa4d995353581176d6fe667a993.lanprp.sz.yontoys.com:898/api/v2/file/read?file_hash=a84aec324c9f4b6eb3b9c3e64c8d75c1&token=f24970fc9f70c81e89810d2c78432dfe');
 ```
-</br>
-<font color="#08c" size=3>3.xlsxStyle 自定义样式表</font>
+
+## 3.xlsxStyle 自定义样式表
 
 ```js
 const template = `

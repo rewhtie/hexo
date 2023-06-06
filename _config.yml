@@ -4,7 +4,7 @@
 
 # Site
 title: BlueEyes
-subtitle: 魔术
+subtitle: 青眼
 description: 个人博客
 keywords:
 author: 青眼魔术
@@ -45,12 +45,32 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+search:
+  path: search.xml
+  field: post
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
 prismjs:
   enable: false
   preprocess: true
@@ -100,7 +120,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: hexo-theme-matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

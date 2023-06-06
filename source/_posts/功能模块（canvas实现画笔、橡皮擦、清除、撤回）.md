@@ -6,12 +6,9 @@ tags:
 ---
 
 canvas实现画布的画笔绘画功能、橡皮擦擦除功能、撤回功能、清除画布功能、画布放大
-
 <!-- more -->
-
-### 组件封装（实现最基础的canavs绘画功能：画笔、橡皮擦、涂鸦笔）
-
-<font color="#FF5E2A">1.WritingBoard.html</font>
+### 1、组件封装（实现最基础的canavs绘画功能：画笔、橡皮擦、涂鸦笔）
+#### <font color="#FF5E2A">WritingBoard.html</font>
 
 ```html
 <template>
@@ -71,11 +68,12 @@ canvas实现画布的画笔绘画功能、橡皮擦擦除功能、撤回功能�
     </template>
   </div>
 </template>
-```
-<font color="#FF5E2A" id="link">2.WritingBoard.js</font>
 
+```
+#### <font color="#FF5E2A" id="link">WritingBoard.js</font>
 ```ts
 import { computed, onMounted, onUnmounted, PropType, ref, watch } from 'vue'
+
 const props = defineProps({
   // 笔的颜色
   color: {
@@ -361,8 +359,10 @@ defineExpose({
   getImageDataURL,
   setImageDataURL,
 })
+
 ```
-<font color="#FF5E2A">3.WritingBoard.css</font>
+
+#### <font color="#FF5E2A">WritingBoard.css</font>
 
 ```css
 .writing-board {
@@ -412,15 +412,16 @@ defineExpose({
   filter: drop-shadow(grey 0 0 2px);
 }
 ```
-<font color="#FF5E2A">4.组件封装 components/WritingBoard.vue</font>
 
-```ts
+#### <font color="#FF5E2A">WritingBoard.vue</font>
+
+```html
 <template src="./canavs.html"></template>
 <script src="./canavs.js"></script>
 <style src="./canvas.css"></style>
 ```
 
-### 使用组件（最基础的画笔功能实现）
+### 2、使用组件（最基础的画笔功能实现）
 
 ```ts
 <WritingBoard 
@@ -444,7 +445,7 @@ const model = ref('pen' as 'pen' | 'eraser' | 'mark')
 const hanldeWritingEnd = () => { }
 ```
 
-### 添加撤回功能、清除功能、笔迹数据保存（以上使用模版添加逻辑）
+### 3、添加撤回功能、清除功能、笔迹数据保存（以上使用模版添加逻辑）
 
 ```ts
 <WritingBoard 
@@ -508,7 +509,7 @@ watch(() => boardBgModel.value, (type: typeof boardBgModel.value) => {
 <font color="red">3.获取远程笔迹数据注意调用 setImageDataURL 给画布数据</font>
 
 
-### 添加画布放大功能（以上使用模版添加逻辑）难点来了
+### 4、添加画布放大功能（以上使用模版添加逻辑）难点来了
 
 <font color="red">遇到的问题：</font>
 <font color="red">1.画布放大导致画笔各类工具错位</font>
