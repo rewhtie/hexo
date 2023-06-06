@@ -8,19 +8,19 @@ loadash方法使用场景快速查找
 
 <!-- more -->
 
-## 数组
+## map 数组对象找出对应key值
 
 ```js
-const arr = [5, 4, 3, 2, 1, 0]
-
-const max = Math.max(...arr) // 5
-const min = Math.min(...arr) // 0
+import { map } from 'lodash'
+type plainOptionsType = { label: string, value: number }
+const plainOptions = ref([] as Array<plainOptionsType>)
+const data = map(plainOptions.value, 'value') as Array<number>
 ```
 
 ## 对象
 
 ```js
-_.pick(object, [props]) 
+
 
 ```
 
