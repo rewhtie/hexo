@@ -127,7 +127,7 @@ theme: hexo-theme-matery
 deploy:
   type: git
   repo: git@github.com:rewhtie/hexo.git
-  branch: master
+  branch: main
 
 Plugins:
 - hexo-generator-baidu-sitemap
