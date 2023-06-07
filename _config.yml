@@ -126,7 +126,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/rewhtie/hexo.git
+  repo: git@github.com:rewhtie/hexo.git
   branch: master
 
 Plugins:
