@@ -135,3 +135,21 @@ const map = {
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 
+### hexo 提交部署报错
+
+生成ssh秘钥，直接默认回车保存在 “C盘://用户主目录/.ssh/id_rsa.pub”
+
+``` bash
+$ ssh-keygen -t rsa -C "comment"
+```
+
+记事本打开复制，到github网站的setting下找到钥匙图标 新建秘钥 复制黏贴生成的秘钥，记得勾选读写权限
+
+回到hexo根目录下的_config.yml
+
+``` bash
+deploy:
+  type: git
+  repo: git@github.com:rewhtie/hexo.git #ssh地址
+  branch: master #部署推送分支
+```
