@@ -8,6 +8,8 @@ tags: 功能模块
 
 <!-- more -->
 
+### <font color='red'>说明</font>
+
 - 登录组件
   - 函数式调用"extend" login.install({})
   - 标签式调用 "< login / >"
@@ -23,7 +25,7 @@ tags: 功能模块
 
 
 
-<font color='red'>login登录函数组件（extend）</font>
+### <font color='red'>login登录函数组件（extend）</font>
 
 ```js
 import Vue from "vue";
@@ -50,7 +52,7 @@ login.install = function (next) {
 export default login;
 ```
 
-<font color='red'>路由封装 ~ 路由跳转校验登录</font>
+### <font color='red'>路由封装 ~ 路由跳转校验登录</font>
 
 ```js
 import Vue from "vue";
@@ -103,7 +105,7 @@ router.beforeEach(async (to, from, next) => {
 export default router;
 ```
 
-<font color='red'>axios封装 ~ 响应拦截处理</font>
+### <font color='red'>axios封装 ~ 响应拦截处理</font>
 
 ```js
 import axios from "axios";
@@ -147,7 +149,7 @@ http.interceptors.response.use(
 export default http;
 ```
 
-<font color='red'>自定义指令 ~ 标签 "< div v-login / >" 校验登录提前，未登录弹登录框阻止冒泡，已登录无事发生 </font>
+### <font color='red'>自定义指令 ~ 标签 "< div v-login / >" 校验登录提前，未登录弹登录框阻止冒泡，已登录无事发生 </font>
 
 ```js
 import Vue from "vue";
@@ -169,8 +171,6 @@ function login(e) {
   }
 }
 ```
-
-[基础的登录组件代码](https://rewhtie.github.io/hexo/2022/12/08/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%EF%BC%88vue2%20+%20vant2.0%20%E7%99%BB%E5%BD%95%E5%BC%B9%E6%A1%86%EF%BC%89/)
 
 
 <!-- more -->

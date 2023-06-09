@@ -8,7 +8,7 @@ webpack配置项打包
 
 <!-- more -->
 
-## TypeScript打包
+### TypeScript打包
 
 ### webpack整合
 

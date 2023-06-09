@@ -1,6 +1,6 @@
 ---
 title: canvas实现画布效果（画笔、橡皮擦、清除、撤回、放大）
-data: 2023-06-20 12:00
+date: 2023-06-08 12:00
 tags:
   - 功能模块
 ---
@@ -516,7 +516,7 @@ watch(() => boardBgModel.value, (type: typeof boardBgModel.value) => {
 <font color="#FF5E2A">原因1：放大时有外部元素干扰，例如画布组件被一层div包裹着，这时候定位就会脱离外层div，导致工具错位</font>
 <font color="#FF5E2A">解决办法：将外层div等比例放大</font>
 <font color="#FF5E2A">原因2：new ResizeObserver这个API导致，或者是他监听的事件触发导致</font>
-<font color="#FF5E2A">解决办法：将外层div等比例放大、具体看下面代码解决</font>
+<font color="#FF5E2A">解决办法：将外层div等比例放大、具体看下面代码解决[点击查看](#reason_two)</font>
 
 <font color="red">2.放大无法选择区域、默认是画笔各类工具状态</font>
 <font color="#FF5E2A">解决：将画布拖拽移动分离：右下角提供一个小窗口，里面有一个元素在固定小窗口内移动，元素移动画布跟随着移动</font>
@@ -661,7 +661,7 @@ const handleMouseMove = (event: MouseEvent) => {
 
 
 
-<font color="red">解决原因2 导致画布移动错位、工具错位</font>
+<font color="red" id="reason_two">解决原因2 导致画布移动错位、工具错位</font>
 
 ```ts
 const centerStyle = ref({}) 
