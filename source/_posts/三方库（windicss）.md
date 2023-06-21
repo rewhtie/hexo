@@ -9,6 +9,10 @@ tags:
 
 <!-- more -->
 
+```bash
+npm install windicss
+```
+
 #### 1.新建flex样式 plugin/flex.js 文件
 
 ```js
@@ -138,7 +142,7 @@ import flexPlugin from './plugin/flex'
 import lineClampPlugin from './plugin/lineClamp'
 import { FullConfig } from 'windicss/types/interfaces'
 
-const defaultConfig: FullConfig = {
+const windPreset: FullConfig = {
   preflight: false,
   prefix: 'w-',
   attributify: {
@@ -147,7 +151,7 @@ const defaultConfig: FullConfig = {
   plugins: [flexPlugin, lineClampPlugin]
 }
 
-export default defaultConfig
+export default windPreset
 ```
 
 #### 4.项目使用 引入 plugin/index.js
@@ -207,5 +211,65 @@ windPreset.plugins!.push(mpptxPlugin)
 export default windPreset
 ```
 
+#### 5.vite.config.ts配置
+
+<font color="#08c">安装依赖</font>
+
+```bash
+npm install vite-plugin-windicss windicss
+```
+
+<font color="#08c">vite.config.ts</font>
+
+```js
+import { defineConfig } from "vite";
+import WindiCSS from 'vite-plugin-windicss'
+export default defineConfig({
+  plugins: [WindiCSS({
+    scan: {
+      dirs: ['.'], // 当前目录下所有文件
+      fileExtensions: ['vue', 'js', 'ts'], // 同时启用扫描vue/js/ts
+    },
+  }),],
+});
+```
+
+<font color="#08c">main.ts</font>
+
+```js
+import { createSSRApp } from 'vue'
+import App from './App.vue'
+import 'virtual:windi-components.css'
+import 'virtual:windi-utilities.css'
+export function createApp() {
+	const app = createSSRApp(App)
+	return {
+		app
+	}
+}
+```
+
+#### 6.webpack构建vue.config.ts配置
+
+<font color="#08c">vue.config.ts</font>
+
+```js
+// 其他配置忽略
+module.exports = {
+  pluginOptions: {
+    windicss: {}
+  },
+}
+```
+
+<font color="#08c">main.ts</font>
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import 'windi.css'
+const app = createApp(App)
+app.mount('#app')
+```
 
 <!-- more -->
