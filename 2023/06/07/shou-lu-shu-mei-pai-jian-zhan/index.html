@@ -1,0 +1,1248 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="树莓派的搭建, BlueEyes">
+    <meta name="description" content="树莓派搭建web服务
+
+
+树莓派搭建web服务安装操作系统下载树莓派镜像烧录器下载地址
+准备读卡器和 tf 卡买树莓派的时候套餐一般包含这个东西，如果没有也可以用闲置的 U盘 替代。如果都没有的话，可以去买闪迪的 32g tf卡，淘宝或京东">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>树莓派的搭建 | BlueEyes</title>
+    <link rel="icon" type="image/png" href="/hexo/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/hexo/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/hexo/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/hexo/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/hexo/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/hexo/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/hexo/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/hexo/css/my.css">
+<link rel="stylesheet" type="text/css" href="/hexo/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/hexo/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/hexo/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/hexo/css/reward.css">
+    
+
+
+
+    <script src="/hexo/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/hexo/atom.xml" title="BlueEyes" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/hexo/" class="waves-effect waves-light">
+                    
+                    <img src="/hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">BlueEyes</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/hexo/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/hexo/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">BlueEyes</div>
+        <div class="logo-desc">
+            
+            个人博客
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/hexo/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/hexo/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">树莓派的搭建</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                                <span class="chip bg-color">收录</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-06-07
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-06-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/hexo/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>树莓派搭建web服务</p>
+<a id="more"></a>
+
+<h1 id="树莓派搭建web服务"><a href="#树莓派搭建web服务" class="headerlink" title="树莓派搭建web服务"></a>树莓派搭建web服务</h1><h2 id="安装操作系统"><a href="#安装操作系统" class="headerlink" title="安装操作系统"></a>安装操作系统</h2><h3 id="下载树莓派镜像烧录器"><a href="#下载树莓派镜像烧录器" class="headerlink" title="下载树莓派镜像烧录器"></a>下载树莓派镜像烧录器</h3><p><a target="_blank" rel="noopener" href="https://downloads.raspberrypi.org/imager/imager_latest.exe">下载地址</a></p>
+<h3 id="准备读卡器和-tf-卡"><a href="#准备读卡器和-tf-卡" class="headerlink" title="准备读卡器和 tf 卡"></a>准备读卡器和 tf 卡</h3><p>买树莓派的时候套餐一般包含这个东西，如果没有也可以用闲置的 U盘 替代。如果都没有的话，可以去买闪迪的 32g tf卡，淘宝或京东上面会送一个 usb2.0 的读卡器，如果要单独买读卡器的话，可以买川宇牌子的读卡器，usb 最好是3.0的，读卡器记得要看支不支持 Linux 系统。 </p>
+<p>最好还是用 tf卡，因为如果硬件出现故障的话，使用读卡器+ tf卡只会烧毁读卡器，而 U盘 就会整个损坏。而且使用 U盘 作为系统盘并不稳定，经常跑着跑着就出现读写错误</p>
+<h3 id="烧录系统"><a href="#烧录系统" class="headerlink" title="烧录系统"></a>烧录系统</h3><p>将 读卡器 + tf卡 插进你的电脑</p>
+<p>选择你的 tf卡(U盘)，注意对准型号，不要弄错了，不然会被格式化数据就没了</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205182703.png" alt="image-20220205182700880"></p>
+<p>打开刚才下载好的树莓派镜像烧录器，点击选择系统，点击第二个 Raspberry Pi OS(other)，选择 Paspberry Pi OS Lite(64-bit)系统，在这里我是要当服务器的，所以选择了无桌面版的的操作系统，Paspberry Pi OS 是在 Debian 基础上修改的操作系统</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205182512.png" alt="image-20220205182502965"></p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205183428.png" alt="image-20220205183426020"></p>
+<p>点击设置</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205183748.png" alt="image-20220205183745528"></p>
+<p>开启 SSH 服务，记住账号密码，等下要用</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205183652.png" alt="image-20220205183634408"></p>
+<p>配置 wifi，如果有以太网接口，可以不做配置。最好还是用以太网接口联网比较好，因为一旦设备重新连接 wifi，那么路由给设备分配的<strong>内网 IP</strong> 地址就会重新分配，不方便我们操作下一步的 ssh远程登录。需要在路由器上设置绑定 mac 的 IP 地址。而且以太网接口的网速肯定是比 wifi 快 n 倍的，所以有条件的话还是插网线优先</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205183954.png" alt="image-20220205183952255"></p>
+<p>点击保存后，点击烧录慢慢等待即可，烧录完成，就可以拔掉 tf读卡器，插进你的树莓派安装系统了</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205184517.png" alt="image-20220205184513489"></p>
+<h2 id="搭建-web-服务"><a href="#搭建-web-服务" class="headerlink" title="搭建 web 服务"></a>搭建 web 服务</h2><h3 id="外接设备-键盘、显示器"><a href="#外接设备-键盘、显示器" class="headerlink" title="外接设备(键盘、显示器)"></a>外接设备(键盘、显示器)</h3><p>如果你有闲置的键盘和显示器，可以跳过下一步 SSH 的远程登陆直接操作命令行，当然最好还是用跳过这里直接用 SSH 登录操作最好，毕竟我们以后都是用 SSH 远程操作服务器的。</p>
+<h3 id="SSH-远程登录"><a href="#SSH-远程登录" class="headerlink" title="SSH 远程登录"></a>SSH 远程登录</h3><p>先将读卡器插进树莓派，再开机(这里可能要等待一会)。第一次启动使用 DHCP 获取IP地址, 你可以从路由器管理页面，如 192.168.1.1。每个路由器的管理页面都不尽相同，请看你家的路由器的背面查看路由管理面板的 IP 地址查看树莓派 IP 地址，树莓派的设备名默认是 <strong>raspberrypi</strong>，打开路由管理页面查看名为 raspberrypi 的设备，记住他的 <strong>ip</strong> 地址。因为大家的路由器都不一样，管理页面自然不一样，我这里就简略带过…如果你没有路由器管理账号密码，可以考虑重置路由，或者按照这个<a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/179916193.html">方法</a>来找到树莓派的内网IP地址。亦或者使用手机 下载 <strong>fing</strong> App 软件，获取内网下的所有设备信息找到 树莓派</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205185843.png" alt="image-20220205185840359"></p>
+<p>下载并打开 putty 远程登录工具</p>
+<p><a target="_blank" rel="noopener" href="https://gsf-fl.softonic.com/a2f/168/8ad1e902d4b19d4003eecdb8ed992adbc7/putty-0.76-installer.msi?Expires=1644094562&Signature=d341d05d32385e71a26b55bd30c4d0bd0dd9db6d&url=https://putty.en.softonic.com&Filename=putty-0.76-installer.msi">下载链接</a></p>
+<p>粘贴刚才的树莓派设备的 ip 地址，点击 Open 后弹出一个小窗口，点击 accept，如果是弹出连接超时的提示，那么你的 ip 地址应该是错误的。另外连接成功后在路由管理页面设置 mac 和 ip 地址绑定，否则树莓派重新连接 wifi，ip 地址就可能不是之前的 ip 地址了。</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205190241.png" alt="image-20220205190239146"></p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205190754.png" alt="image-20220205190751445"></p>
+<p>这里画红圈的地方就是刚才 <a href="#%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F"></a> 时候设置的 ssh 账号密码，要注意的是，在填写密码的时候，黑窗口是没有反应的，直接输入回车就好了，登录以后看到一下图片那就代表成功了。</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220205191141.png" alt="image-20220205191139275"></p>
+<h3 id="安装宝塔面板"><a href="#安装宝塔面板" class="headerlink" title="安装宝塔面板"></a>安装宝塔面板</h3><p>安装宝塔面板需要 root 权限</p>
+<p>在小黑窗口，输入以下命令设置 root 密码，回车后会他会让你重复输入两次 root 的密码</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo passwd root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>激活 root 账号</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo passwd -unlock root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>切换 root 账号，输入刚才的密码</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">su root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>输入安装宝塔的命令，回车后等待一小会，它会提示你要不要安装宝塔面板，输入 y 回车然后慢慢等待即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install-ubuntu_6.0.sh &amp;&amp; bash install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220206232913.png" alt="image-20220206232607646"></p>
+<p>耗时 15 分钟终于下载安装完了，复制上面的内网面板地址，在浏览器打开后输入上面的账号密码。</p>
+<p>如果你报了这样的错误：</p>
+<p><img src="https://www.bt.cn/bbs/data/attachment/forum/202201/16/195449efiz56qp9yzc06c5.png"></p>
+<p>这是因为网络差的原因导致某些 Python 的依赖没有成功下载，输入以下命令重装 Python 环境：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rm -rf &#x2F;www&#x2F;server&#x2F;panel&#x2F;pyenv
+curl -sSO http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_panel.sh &amp;&amp; bash install_panel.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220206232847.png" alt="image-20220206232845426"></p>
+<p>成功登录后，可以直接用宝塔内的终端进行操作，也就是不需要再用 putty 了</p>
+<h3 id="部署-web-站点"><a href="#部署-web-站点" class="headerlink" title="部署 web 站点"></a>部署 web 站点</h3><p>首次安装宝塔会提示你装 web服务的套件，你装哪一个都可以。</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220206233023.png" alt="image-20220206233020982"></p>
+<p>点击 网站》PHP项目》添加站点》域名输入 127.0.0.1:5408》提交。其中 127.0.0.1:5408 中的 5408 是端口号，可以自定义端口号，不要占用其他端口号即可。</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220207012903.png" alt="image-20220207012854439"></p>
+<p>成功创建完站点后，复制宝塔面板左上角的 IP 地址，也就是你的树莓派的局域网 IP 地址，粘贴到你的浏览器的地址输入栏，再加上我们刚才设置的端口号5408，如下图</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220207013213.png" alt="image-20220207013211833"></p>
+<p>如果出现下图，代表你成功部署站点了！</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220207013445.png" alt="image-20220207013443617"></p>
+<p>如果需要更改网页内容，到 文件》根目录&gt;www&gt;wwwroot&gt;127.0.0.1&gt;index.html，这个文件在我们刚刚部署站点的时候，宝塔就已经为我们创建好了，双击 index.html 修改内容，剩下的就不用我多说了，相信能看到这里的帅逼们都知道应该怎么做</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220207013810.png" alt="image-20220207013808838"></p>
+<h2 id="FRP内网穿透"><a href="#FRP内网穿透" class="headerlink" title="FRP内网穿透"></a>FRP内网穿透</h2><p>我们已经成功部署好站点了，但是此时只能够是我们内网访问，外放还是访问不到的。如果你的宽带有公网 IP 的话，一般只需要 DDOS 动态解析 IP 地址就好了，这是最优也是最简单的方案。但是普通用户通常是没有公网 IP 地址的，所以在这里不过多描述。</p>
+<p>这里我用 <a target="_blank" rel="noopener" href="https://www.natfrp.com/">SAKURA FRP</a> 来穿透内网，当然你也可以用花生壳、网云穿之类的其他软件也是可以的。</p>
+<h3 id="准备域名"><a href="#准备域名" class="headerlink" title="准备域名"></a>准备域名</h3><p>首先你要有两个域名，一个穿透宝塔面板，一个穿透你的部署的 web 站点。只有一个域名的话可以使用 VPN 来穿透所有端口号。这里我刚好有几个域名，就不费事了</p>
+<p>如果没有 <strong>已备案</strong> 的 <strong>域名</strong> 就不要往下看了，去找其他的有赠送免费域名的穿透软件的文档吧（花生壳、网云穿等好像都有赠送免费域名）。</p>
+<h3 id="创建穿透隧道"><a href="#创建穿透隧道" class="headerlink" title="创建穿透隧道"></a>创建穿透隧道</h3><p>首先到 <a target="_blank" rel="noopener" href="https://www.natfrp.com/">官网</a> 注册账号</p>
+<p>实名认证、验证备案，这里实名认证是要收钱的，好像是1块钱还是忘了。</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208005254.png" alt="image-20220208005251585"></p>
+<p>创建隧道列表</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208005119.png" alt="image-20220208005115853"></p>
+<p>勾选可建站，本地端口号是你的服务的端口号。宝塔面板的端口号是 8888，所以这里穿透内网让外网也可以访问你的宝塔面板。上面我们部署的项目的端口号是 5408，那么我们要穿透这个服务就填端口号 5408</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208005815.png" alt="image-20220208005814139"></p>
+<p>创建完毕后在终端输入以下命令安装 frp 软件并检验 md5 值</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cd &#x2F;usr&#x2F;local&#x2F;bin
+wget -O frpc https:&#x2F;&#x2F;getfrp.sh&#x2F;d&#x2F;frpc_linux_arm64
+chmod 755 frpc
+ls -ls frpc
+md5sum frpc
+frpc -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208004211.png" alt="image-20220208004209675"></p>
+<p>黄色框是穿透软件的版本号</p>
+<p>出现上图划红线的 MD5 值代表安装成功，如果不一致则代表安装错误。当然你安装的版本应该比我高，可以自行到 <a target="_blank" rel="noopener" href="https://www.natfrp.com/tunnel/download">官网</a> 对比 md5 确认安装成功</p>
+<h3 id="编辑-frpc-配置文件"><a href="#编辑-frpc-配置文件" class="headerlink" title="编辑 frpc 配置文件"></a>编辑 frpc 配置文件</h3><p>打开宝塔面板，进入文件，输入 <code>/etc/systemd/system</code></p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208011948.png" alt="image-20220208011946615"></p>
+<p>创建文件 <code>frpc@.service</code></p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208012336.png" alt="image-20220208012335229"></p>
+<p>点击 <strong>编辑</strong>，然后复制并粘贴下面提供的服务文件内容，请注意 <strong>不要</strong> 多复制或少复制任何东西，确保粘贴后的内容和图中一模一样</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[Unit]
+Description&#x3D;SakuraFrp Service
+After&#x3D;network.target
+
+[Service]
+Type&#x3D;idle
+User&#x3D;nobody
+Restart&#x3D;on-failure
+RestartSec&#x3D;60s
+ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;frpc -f %i
+
+[Install]
+WantedBy&#x3D;multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>回到终端，执行下面的命令重载 Systemd，这样服务就配置完成了</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl daemon-reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="启动穿透隧道"><a href="#启动穿透隧道" class="headerlink" title="启动穿透隧道"></a>启动穿透隧道</h3><p>启动隧道需要你的 访问密匙 和 隧道 ID</p>
+<p>点击访问密匙后，就能看到你的密匙</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208010515.png" alt="image-20220208010513486"></p>
+<p>隧道ID：</p>
+<p><img src="https://gitee.com/wu-hao-chao/upload/raw/master/img/20220208010634.png" alt="image-20220208010632829"></p>
+<p>启动/停止隧道非常简单，使用下面的命令即可，<code>start</code> 是启动，<code>stop</code> 是停止</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl start frpc@wb3q7trzx4tq6gaceydjb51daphxxxxx:xxxxxxx
+systemctl stop frpc@wb3q7trzx4tq6gaceydjb51daphxxxxx:xxxxxxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>配置开机自动穿透：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl enable frpc@wb3q7trzx4tq6gaceydjb51daphxxxxx:xxxxxxx
+systemctl enable frpc@wb3q7trzx4tq6gaceydjb51daphxxxxx:xxxxxxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<!-- more -->
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/hexo/about" rel="external nofollow noreferrer">青眼魔术</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/rewhtie/hexo/hexo/2023/06/07/shou-lu-shu-mei-pai-jian-zhan/">https://github.com/rewhtie/hexo/hexo/2023/06/07/shou-lu-shu-mei-pai-jian-zhan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/hexo/about" target="_blank">青眼魔术</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                                    <span class="chip bg-color">收录</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/hexo/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/hexo/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/hexo/2023/06/07/shou-lu-kai-fa-keng-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/hexo/medias/featureimages/9.jpg" class="responsive-img" alt="开发坑点">
+                        
+                        <span class="card-title">开发坑点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            萌新学习记录打卡
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            青眼魔术
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                        <span class="chip bg-color">收录</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/hexo/2023/06/07/shou-lu-xi-nao-yu-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/hexo/medias/featureimages/16.jpg" class="responsive-img" alt="洗脑鸡汤，打不过就加入">
+                        
+                        <span class="card-title">洗脑鸡汤，打不过就加入</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            哈哈，鸡汤来喽~~~干了呀
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            青眼魔术
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                        <span class="chip bg-color">收录</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/hexo/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/hexo/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="/hexo/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/hexo/about" target="_blank">青眼魔术</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">53.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/rewhtie" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2320447654@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2320447654" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2320447654" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/hexo/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/hexo/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/hexo/libs/materialize/materialize.min.js"></script>
+    <script src="/hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/hexo/libs/aos/aos.js"></script>
+    <script src="/hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/hexo/js/matery.js"></script>
+
+    
+
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/hexo/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/hexo/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/hexo/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/hexo/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/hexo/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

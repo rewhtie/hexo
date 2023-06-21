@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BlueEyes</title>
+  
+  <subtitle>青眼魔术</subtitle>
+  <link href="https://github.com/rewhtie/hexo/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/rewhtie/hexo/"/>
+  <updated>2023-06-21T09:08:10.785Z</updated>
+  <id>https://github.com/rewhtie/hexo/</id>
+  
+  <author>
+    <name>青眼魔术</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>功能模块（html-to-image生成图片）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-html-to-image-sheng-cheng-tu-pian/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-html-to-image-sheng-cheng-tu-pian/</id>
+    <published>2023-06-08T06:04:00.000Z</published>
+    <updated>2023-06-21T09:08:10.785Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用html-to-iamge插件依赖，html元素转换成图片&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="功能模块" scheme="https://github.com/rewhtie/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>canvas实现画布效果（画笔、橡皮擦、清除、撤回、放大）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-canvas-shi-xian-hua-bi-xiang-pi-ca-qing-chu-che-hui/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-canvas-shi-xian-hua-bi-xiang-pi-ca-qing-chu-che-hui/</id>
+    <published>2023-06-08T04:00:00.000Z</published>
+    <updated>2023-06-21T09:08:09.533Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;canvas实现画布的画笔绘画功能、橡皮擦擦除功能、撤回功能、清除画布功能、画布放大&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="功能模块" scheme="https://github.com/rewhtie/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聚焦放大镜</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-ju-jiao-fang-da-jing/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-ju-jiao-fang-da-jing/</id>
+    <published>2023-06-08T04:00:00.000Z</published>
+    <updated>2023-06-21T09:08:07.208Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;实现一个窗口拖拽移动并且能自由拉伸宽高的元素区域，区域内的元素根据比例放大&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="功能模块" scheme="https://github.com/rewhtie/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS常问</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/gao-xin-html5-xin-zeng-yuan-su/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/gao-xin-html5-xin-zeng-yuan-su/</id>
+    <published>2023-06-07T12:10:23.550Z</published>
+    <updated>2023-06-21T09:08:04.895Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;经常有的一些 CSS 效果实现，包括问的呀，写的呀，问来问去都是这些基本&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue2、vue3</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/gao-xin-vue2-he-vue3/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/gao-xin-vue2-he-vue3/</id>
+    <published>2023-06-07T12:10:23.550Z</published>
+    <updated>2023-06-21T09:08:06.008Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Vue2的知识点，Vue3的特性，两者之间的差别&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔试题</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/gao-xin-bi-shi-ti/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/gao-xin-bi-shi-ti/</id>
+    <published>2023-06-07T12:10:23.550Z</published>
+    <updated>2023-06-21T09:08:02.242Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一些很恶心的笔试题,高薪的栏门怪！&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>问答题</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/gao-xin-wen-da-ti/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/gao-xin-wen-da-ti/</id>
+    <published>2023-06-07T12:10:23.550Z</published>
+    <updated>2023-06-21T09:08:03.843Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最接近的一次机会,要好好把握住呀&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优雅！实在是太优雅了</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-yan-ling-zhu/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-yan-ling-zhu/</id>
+    <published>2023-06-07T12:10:23.549Z</published>
+    <updated>2023-06-08T11:25:06.674Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;扎心，震撼，感动，不舍，热血，上头&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目（搭建结构）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/xiang-mu-wen-jian-jie-gou/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/xiang-mu-wen-jian-jie-gou/</id>
+    <published>2023-06-07T12:10:23.549Z</published>
+    <updated>2023-06-08T11:24:59.886Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;项目搭建必备：对应各个文件夹的用途&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="项目搭建" scheme="https://github.com/rewhtie/hexo/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你不知道的css几个小细节</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-css-du-dian/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-css-du-dian/</id>
+    <published>2023-06-07T12:10:23.548Z</published>
+    <updated>2023-06-08T11:25:05.262Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;帮你踩css的一些毒坑，为你的烦恼解忧&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端必备工具网站</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-shi-yong-de-wang-zhan/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-shi-yong-de-wang-zhan/</id>
+    <published>2023-06-07T12:10:23.548Z</published>
+    <updated>2023-06-21T09:08:43.483Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;提升开发体验，便利开发利器，顺便收入一些实用文章&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开发坑点</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-kai-fa-keng-dian/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-kai-fa-keng-dian/</id>
+    <published>2023-06-07T12:10:23.548Z</published>
+    <updated>2023-06-21T09:08:40.145Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;萌新学习记录打卡&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派的搭建</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-shu-mei-pai-jian-zhan/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-shu-mei-pai-jian-zhan/</id>
+    <published>2023-06-07T12:10:23.548Z</published>
+    <updated>2023-06-21T09:08:41.931Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;树莓派搭建web服务&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>洗脑鸡汤，打不过就加入</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-xi-nao-yu-ju/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-xi-nao-yu-ju/</id>
+    <published>2023-06-07T12:10:23.548Z</published>
+    <updated>2023-06-21T09:08:47.104Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;哈&lt;del&gt;哈&lt;/del&gt;，鸡汤来喽~~~干了呀&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小程序（一些小细节）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/xiao-cheng-xu-yi-xie-xiao-xi-jie/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/xiao-cheng-xu-yi-xie-xiao-xi-jie/</id>
+    <published>2023-06-07T12:10:23.547Z</published>
+    <updated>2023-06-21T09:08:58.886Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;小程序开发遇到的一些顽固切无法理解的问题&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="taro" scheme="https://github.com/rewhtie/hexo/tags/taro/"/>
+    
+    <category term="小程序" scheme="https://github.com/rewhtie/hexo/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序（小程序A内嵌的H5跳转小程序B）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/xiao-cheng-xu-xiao-cheng-xu-a-nei-qian-h5-xiao-cheng-xu-b/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/xiao-cheng-xu-xiao-cheng-xu-a-nei-qian-h5-xiao-cheng-xu-b/</id>
+    <published>2023-06-07T12:10:23.547Z</published>
+    <updated>2023-06-21T09:09:00.882Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;实现微信小程序原生支付。步骤流程拆解：小程序 A =&amp;gt; webview 内嵌 h5 =&amp;gt; 从 h5 跳回到小程序 A 的中转页面 =&amp;gt; 在小程序 A 中转页面使用 wx.navigateToMiniProgram 方法跳转到小程序 B （这时会有提示弹框打开某某小程序、是否同意）=&amp;gt; 小程序 B 实现交互后使用 wx.navigateBackMiniProgram 方法返回小程序 A =&amp;gt; 流程交互完毕&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="微信小程序" scheme="https://github.com/rewhtie/hexo/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode工具</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/kai-fa-gong-ju-vscode-guan-wang-xia-zai-man/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/kai-fa-gong-ju-vscode-guan-wang-xia-zai-man/</id>
+    <published>2023-06-07T12:10:23.547Z</published>
+    <updated>2023-06-21T09:08:18.792Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;vscode官网下载几kb网速，太慢了，解决下载速度慢的问题&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="开发工具" scheme="https://github.com/rewhtie/hexo/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git食用指南</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-git/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-git/</id>
+    <published>2023-06-07T12:10:23.547Z</published>
+    <updated>2023-06-21T09:08:37.862Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;工作必备的管理工具，好的项目git管理肯定十分严谨。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="git" scheme="https://github.com/rewhtie/hexo/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS妙招</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-css-xiao-guo-shi-xian/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-css-xiao-guo-shi-xian/</id>
+    <published>2023-06-07T12:10:23.547Z</published>
+    <updated>2023-06-08T11:25:04.153Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;CSS骚操作，拒绝调教&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue2 + vant2.0登录功能模块</title>
+    <link href="https://github.com/rewhtie/hexo/2023/06/07/gong-neng-mo-kuai-vue2-vant2.0-deng-lu-dan-kuang/"/>
+    <id>https://github.com/rewhtie/hexo/2023/06/07/gong-neng-mo-kuai-vue2-vant2.0-deng-lu-dan-kuang/</id>
+    <published>2023-06-07T12:10:23.546Z</published>
+    <updated>2023-06-21T09:08:16.088Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;vue2.0 + vant2.0(button按钮、Totast轻提示) 实现登录获取验证码, 验证码60s倒计时，手机合规校验，验证码校验&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="功能模块" scheme="https://github.com/rewhtie/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+</feed>
