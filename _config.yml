@@ -72,7 +72,7 @@ feed:
   content_limit_delim: ' '
   order_by: -date
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
