@@ -8,11 +8,12 @@
     <meta name="description" content="导出execl、导入execl解析树形结构
 
 
+xlsx官网文档
 npm install XLSX
 1.execl文件导出例如
 
 const exportExecl = () =&gt; &amp;#123;
-	const workbook = XLSX.utils.bo">
+	const workbook = XLSX">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -394,21 +395,21 @@ const exportExecl = () =&gt; &amp;#123;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-26
+                    2023-06-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    123
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -434,8 +435,9 @@ const exportExecl = () =&gt; &amp;#123;
                 <p>导出execl、导入execl解析树形结构</p>
 <a id="more"></a>
 
+<p><a target="_blank" rel="noopener" href="https://docs.sheetjs.com/docs/api/utilities/array/">xlsx官网文档</a></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install XLSX<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="1-execl文件导出"><a href="#1-execl文件导出" class="headerlink" title="1.execl文件导出"></a>1.execl文件导出</h4><p>例如</p>
+<h3 id="1-execl文件导出"><a href="#1-execl文件导出" class="headerlink" title="1.execl文件导出"></a>1.execl文件导出</h3><p>例如</p>
 <p><img src="http://linmingqi.top/img/execl%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%87%BA.png"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">exportExecl</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 	<span class="token keyword">const</span> workbook <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">book_new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -455,10 +457,216 @@ const exportExecl = () =&gt; &amp;#123;
 		<span class="token punctuation">&#123;</span> wpx<span class="token operator">:</span> <span class="token number">200</span> <span class="token punctuation">&#125;</span>
 	<span class="token punctuation">]</span><span class="token punctuation">;</span>
 	worksheet<span class="token punctuation">[</span><span class="token string">'!cols'</span><span class="token punctuation">]</span> <span class="token operator">=</span> columnWidths<span class="token punctuation">;</span>
-	<span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">book_append_sheet</span><span class="token punctuation">(</span>workbook<span class="token punctuation">,</span> worksheet<span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">book_append_sheet</span><span class="token punctuation">(</span>workbook<span class="token punctuation">,</span> worksheet<span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 也可以导出csv纯json格式数据，具体实现官网</span>
 	<span class="token constant">XLSX</span><span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>workbook<span class="token punctuation">,</span> <span class="token string">'模板.xlsx'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-execl文件导入解析树状结构"><a href="#2-execl文件导入解析树状结构" class="headerlink" title="2.execl文件导入解析树状结构"></a>2.execl文件导入解析树状结构</h3><p>拿到上面导出的execl导入解析需要转换为以下格式、树状结构</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const jsonData &#x3D; [
+  &#123;
+    title:&#39;第一单元 我和我的祖国&#39;,
+    level: 1,
+    children: [
+      &#123;
+        title:&#39;第一章节 我和我的祖国&#39;,
+        level: 2,
+        children: [
+          &#123;
+            title:&#39;欣赏&#39;,
+            level: 3,
+            children: [
+              &#123;
+                title:&#39;我的中国心&#39;,
+                level: 4,
+                children: null
+              &#125;
+            ]
+          &#125;,
+          &#123;
+            title:&#39;演唱&#39;,
+            level: 3,
+            children: [
+              &#123;
+                title:&#39;我的祖国&#39;,
+                children: null
+              &#125;
+            ]
+          &#125;,
+        ]
+      &#125;
+    ],
+  &#125;,
+];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="导入execl获取到表格的数据"><a href="#导入execl获取到表格的数据" class="headerlink" title="导入execl获取到表格的数据"></a>导入execl获取到表格的数据</h4><p>通过reducePush找到符合条件的各个元素下标位置</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">importExecl</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">const</span> file <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">uploadFileEvent</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+		accept<span class="token operator">:</span> <span class="token string">'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readBlobAsArrayBuffer</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span>
+	<span class="token keyword">const</span> workbook <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> type<span class="token operator">:</span> <span class="token string">'array'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	<span class="token keyword">const</span> worksheet <span class="token operator">=</span> workbook<span class="token punctuation">.</span>Sheets<span class="token punctuation">[</span>workbook<span class="token punctuation">.</span>SheetNames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+	<span class="token keyword">const</span> jsonData <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">sheet_to_json</span><span class="token punctuation">(</span>worksheet<span class="token punctuation">)</span>
+	<span class="token comment">// console.log('jsonData最开始结构', jsonData)</span>
+	<span class="token keyword">const</span> oneIndex <span class="token operator">=</span> <span class="token function">reducePush</span><span class="token punctuation">(</span>jsonData<span class="token punctuation">,</span> <span class="token string">'一级目录'</span><span class="token punctuation">)</span>
+	<span class="token comment">// console.log('jsonData第一级目录下标', oneIndex) [1,9,10,11,12]</span>
+	<span class="token keyword">const</span> twoIndex <span class="token operator">=</span> <span class="token function">reducePush</span><span class="token punctuation">(</span>jsonData<span class="token punctuation">,</span> <span class="token string">'二级目录'</span><span class="token punctuation">)</span>
+	<span class="token comment">// console.log('jsonData第二级目录下标', twoIndex) [2,8,13,16]</span>
+	<span class="token keyword">const</span> threeIndex <span class="token operator">=</span> <span class="token function">reducePush</span><span class="token punctuation">(</span>jsonData<span class="token punctuation">,</span> <span class="token string">'三级目录'</span><span class="token punctuation">)</span>
+	<span class="token comment">// console.log('jsonData第三级目录下标', threeIndex) [3,14,17]</span>
+	<span class="token keyword">const</span> fourIndex <span class="token operator">=</span> <span class="token function">reducePush</span><span class="token punctuation">(</span>jsonData<span class="token punctuation">,</span> <span class="token string">'四级目录'</span><span class="token punctuation">)</span>
+	<span class="token comment">// console.log('jsonData第四级目录下标', fourIndex) [4,5,6,7,15,18,19]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="分析数据结构"><a href="#分析数据结构" class="headerlink" title="分析数据结构"></a>分析数据结构</h4><p><font color="red" id="back">缕清之间的关系oneIndex、twoIndex、threeIndex、fourIndex</font> <a href="#json">具体结构</a> </p>
+<ul>
+<li>一级目录有1,9,10,11,12,发现1-9中间就是1的子级，9、10、11没有子级，大于12的就是12的子级 </li>
+<li>二级目录2,8是1的子级，13,16是12的子级</li>
+<li>三级目录3是2的子级，14是13的子级，17是16的子级</li>
+<li>四级目录4,5,6,7是3的子级，15是14的子级，18,19是17的子级</li>
+</ul>
+<p><font color="red">其实就是相邻之间的范围值就是要填充的位置，最后一位时肯定是空的，只需要判断 下标+1 的时候是undefined 就能知道是最后一位，直接大于最后一位</font></p>
+<h4 id="逻辑实现代码"><a href="#逻辑实现代码" class="headerlink" title="逻辑实现代码"></a>逻辑实现代码</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arrayOne <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+oneIndex<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">one<span class="token punctuation">,</span> oneIdx</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+		title<span class="token operator">:</span> jsonData<span class="token punctuation">[</span>one<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'一级目录'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		children<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+	<span class="token punctuation">&#125;</span>
+	twoIndex<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">two<span class="token punctuation">,</span> twoIdx</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>two <span class="token operator">></span> one <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>two <span class="token operator">&lt;</span> oneIndex<span class="token punctuation">[</span>oneIdx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> oneIndex<span class="token punctuation">[</span>oneIdx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+				title<span class="token operator">:</span> jsonData<span class="token punctuation">[</span>two<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'二级目录'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				children<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+			<span class="token punctuation">&#125;</span>
+			a<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+			threeIndex<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">three<span class="token punctuation">,</span> threeIdx</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>three <span class="token operator">></span> two <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>three <span class="token operator">&lt;</span> twoIndex<span class="token punctuation">[</span>twoIdx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> twoIndex<span class="token punctuation">[</span>twoIdx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+					<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+						title<span class="token operator">:</span> jsonData<span class="token punctuation">[</span>three<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'三级目录'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+						children<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+					<span class="token punctuation">&#125;</span>
+					b<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+					fourIndex<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">four</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+						<span class="token keyword">if</span> <span class="token punctuation">(</span>four <span class="token operator">></span> three <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>four <span class="token operator">&lt;</span> threeIndex<span class="token punctuation">[</span>threeIdx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> threeIndex<span class="token punctuation">[</span>threeIdx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+							<span class="token keyword">let</span> d <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+								title<span class="token operator">:</span> jsonData<span class="token punctuation">[</span>four<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'四级目录'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span>
+							c<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+						<span class="token punctuation">&#125;</span>
+					<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+				<span class="token punctuation">&#125;</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	arrayOne<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="reducePush函数"><a href="#reducePush函数" class="headerlink" title="reducePush函数"></a>reducePush函数</h4><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;*
+**data：数组
+**propertyName: 属性名
+*&#x2F;
+const reducePush &#x3D; (data: Array, propertyName: String) &#x3D;&gt; &#123;
+	const array &#x3D; data.reduce((indexes, obj, index) &#x3D;&gt; &#123;
+		if (obj[propertyName]) &#123;
+			&#x2F;&#x2F; index下标、obj元素内容
+			indexes.push(obj);
+		&#125;
+		return indexes;
+	&#125;, [])
+	return array
+&#125;
+const data &#x3D; [&#123; name: &#39;&#39;, age: &#39;11&#39; &#125;, &#123; name: &#39;小明&#39;, age: &#39;12&#39; &#125;]
+const newData &#x3D; reducePush(data, &#39;name&#39;) 
+&#x2F;&#x2F; find效果newData: [&#123; name: &#39;小明&#39;, age: &#39;12&#39; &#125;]
+&#x2F;&#x2F; findIndex效果newData: [1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p><font id="json">树形数据结构展示</font> <a href="#back">回到触发点</a> </p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">data <span class="token operator">=</span> <span class="token punctuation">[</span>
+	<span class="token punctuation">&#123;</span>
+		id_1<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		children<span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token punctuation">&#123;</span>
+				id_2<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				children<span class="token operator">:</span><span class="token punctuation">[</span>
+					<span class="token punctuation">&#123;</span>
+						id_3<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+						children<span class="token operator">:</span> <span class="token punctuation">[</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span>
+						<span class="token punctuation">]</span>
+					<span class="token punctuation">&#125;</span>
+				<span class="token punctuation">]</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+			<span class="token punctuation">&#123;</span>
+				id_2<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+				children<span class="token operator">:</span> <span class="token keyword">null</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">]</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#123;</span>
+		id_1<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		children<span class="token operator">:</span> <span class="token keyword">null</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#123;</span>
+		id_1<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		children<span class="token operator">:</span> <span class="token keyword">null</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#123;</span>
+		id_1<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		children<span class="token operator">:</span> <span class="token keyword">null</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#123;</span>
+		id_1<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+		children<span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token punctuation">&#123;</span>
+				id_2<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				children<span class="token operator">:</span> <span class="token punctuation">[</span>
+					<span class="token punctuation">&#123;</span>
+						id_3<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+						children<span class="token operator">:</span> <span class="token punctuation">[</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span>
+						<span class="token punctuation">]</span>
+					<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+				<span class="token punctuation">]</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+			<span class="token punctuation">&#123;</span>
+				id_2<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+				children<span class="token operator">:</span> <span class="token punctuation">[</span>
+					<span class="token punctuation">&#123;</span>
+						id_3<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+						children<span class="token operator">:</span> <span class="token punctuation">[</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+							<span class="token punctuation">&#123;</span>
+								id_4<span class="token operator">:</span> jsonData<span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+								children<span class="token operator">:</span> <span class="token keyword">null</span>
+							<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+						<span class="token punctuation">]</span>
+					<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+				<span class="token punctuation">]</span>
+			<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">]</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <!-- more -->
                 
             </div>
@@ -881,7 +1089,7 @@ const exportExecl = () =&gt; &amp;#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">53.7k</span>
+                        class="white-color">55.5k</span>
             
             
             
