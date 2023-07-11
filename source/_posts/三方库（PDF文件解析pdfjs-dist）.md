@@ -1,15 +1,69 @@
 ---
-title: pdf文件展示
+title: pdfjs-dist插件食用指南
 data: 2022-06-06 12:00
 tags:
   - 文件上传
+  - 三方库
 ---
 
-pdf 文件流读取，以图片形式展示
+pdfjs-dist基础使用，以及 pdf 文件流，以图片墙形式展示
 
 <!-- more -->
 
-## pdf 文件链接解析
+
+### 一、安装依赖引入
+
+```bash
+npm install pdfjs-dist
+```
+
+```ts
+import * as PDFJS from 'pdfjs-dist/legacy/build/pdf.js'
+import { PDFDocumentProxy } from 'pdfjs-dist/types/src/display/api'
+PDFJS.GlobalWorkerOptions.workerSrc = require('pdfjs-dist/build/pdf.worker.entry')
+```
+
+### 二、pdf 在线URL文件解析
+
+```ts
+const loadFile = () => {
+  // const loadingTask = PDFJS.getDocument('https://file-test.midiplusedu.com/2023/06/20/4GmLczjSQtWcxduijTui9FAyl2j73trDRTm1IbvKDE7o3HdIXsBUmODAdh9ZkAdD.pdf')
+  const loadingTask = PDFJS.getDocument(textBook.value)
+  loadingTask.promise.then((pdf) => {
+    total.value = pdf.numPages
+    renderPage(pdf)
+  })
+}
+const renderPage = async (pdf: PDFDocumentProxy) => {
+  for (const i of [...new Array(pdf.numPages).keys()]) {
+    const canvas = document.createElement('canvas') as HTMLCanvasElement
+    canvas.id = `canvas_${i + 1}`
+    // 页数默认加1   
+    const page = await pdf.getPage(i + 1)
+    // 缩小倍数
+    const viewport = page.getViewport({ scale: 1 })
+    const scale = window.innerHeight / viewport.height 
+    const context = canvas.getContext('2d') as any
+    const scaleViewport = page.getViewport({ scale: scale })
+    canvas.height = scaleViewport.height
+    canvas.width = canvasWidth.value = scaleViewport.width
+    const renderContext = {
+      canvasContext: context,
+      viewport: scaleViewport,
+    }
+    page.render(renderContext)
+    canvasRef.value.appendChild(canvas)
+  }
+}
+```
+
+
+### 四、示例、ant上传组件配合pdfjs-dist展示文件墙
+
+>上传PDF，需要展示所有页，形成图片墙
+ 更换上传文件需要把文件墙清空
+ 回显的时候文件墙需要解析
+
 
 ```html
 <a-upload
