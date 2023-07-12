@@ -3,6 +3,7 @@ title: vue2 + vant2.0 标签页 + 折叠面板
 date: 2023-02-07 14:04:02
 tag:
   - 功能模块
+categories: 组件
 ---
 
 vue2.0 + vant2.0(Tab, Tabs标签页、 Collapse, CollapseItem折叠面板) 实现标签页点击跳转到页面对应的位置，并打开折叠内容（手风琴效果），页面滚动、Tabs标签页会根据滚动位置进行横向滚动

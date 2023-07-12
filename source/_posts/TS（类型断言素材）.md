@@ -1,6 +1,7 @@
 ---
 title: TypeScript基本类型
 tags: TypeScript
+categories: 开发语言
 ---
 
 TS定义变量的类型,在TS中是最常用的最基本的

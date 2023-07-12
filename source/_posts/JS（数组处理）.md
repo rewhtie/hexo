@@ -2,6 +2,7 @@
 title: JavaScript数组方法
 data: 2022-2-11 10:42
 tags: JavaScript
+categories: 开发语言
 ---
 
 系统化的数组方法; 数组元素过滤; 数组对比; 数组去重

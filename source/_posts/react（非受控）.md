@@ -4,6 +4,7 @@ title: react非受控组件和受控组件
 data: 2022-06-11 16:00
 tags:
   - react
+categories: 框架
 ---
 
 非受控组件需要ref获取节点实例获取到value值，受控是把值更新存储到state，更新改变（避免了ref过度使用）

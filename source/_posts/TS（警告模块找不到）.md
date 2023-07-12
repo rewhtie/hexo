@@ -2,6 +2,7 @@
 title: vue3 + TypeScript 警告找不到相应的模块
 data: 2022-2-9 10:42
 tags: TypeScript
+categories: 开发语言
 ---
 
 项目里tsconfig.json文件配置属性

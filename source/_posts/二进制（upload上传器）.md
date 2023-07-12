@@ -3,6 +3,7 @@ title: upload上传器
 data: 2022-02-23 12:00
 tags: 
 - 文件上传
+categories: 组件
 ---
 
 上传图片限制宽高、大小；上传execl解析数据

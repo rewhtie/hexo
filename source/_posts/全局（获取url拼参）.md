@@ -1,6 +1,7 @@
 ---
 title: URL获取参数
 tags: 全局函数
+categories: 函数
 ---
 
 url 拼接参数的时候，页面需要获取地址栏上的参数

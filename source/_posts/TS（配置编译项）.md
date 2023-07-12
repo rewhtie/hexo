@@ -2,6 +2,7 @@
 title: TypeScript配置编译项
 data: 2021-12-27 13:00
 tags: TypeScript
+categories: 开发语言
 ---
 
 项目里tsconfig.json文件配置属性

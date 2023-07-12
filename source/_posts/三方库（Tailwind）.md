@@ -3,6 +3,7 @@ title: Tailwind 原子类（样式库）
 data: 2022-08-19 16：39：45
 tags: 
 	- 三方库
+categories: 插件、依赖
 ---
 
 每个样式单独拆解类名，组合使用

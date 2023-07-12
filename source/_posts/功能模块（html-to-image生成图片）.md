@@ -2,6 +2,7 @@
 title: 功能模块（html-to-image生成图片）
 date: 2023-06-08 14:04
 tags: 功能模块
+categories: 组件
 --- 
 
 使用html-to-iamge插件依赖，html元素转换成图片

@@ -3,6 +3,7 @@ title: 微信小程序（小程序A内嵌的H5跳转小程序B）
 data: 2022-09-19 12:00
 tags:
   - 微信小程序
+categories: 框架
 ---
 
 实现微信小程序原生支付。步骤流程拆解：小程序 A => webview 内嵌 h5 => 从 h5 跳回到小程序 A 的中转页面 => 在小程序 A 中转页面使用 wx.navigateToMiniProgram 方法跳转到小程序 B （这时会有提示弹框打开某某小程序、是否同意）=> 小程序 B 实现交互后使用 wx.navigateBackMiniProgram 方法返回小程序 A => 流程交互完毕

@@ -3,6 +3,7 @@ title: react基础语法
 data: 2022-06-06 16:00
 tags:
   - react
+categories: 框架
 ---
 
 react 的 jsx 语法规则，三大核心属性，babel 严格模式，class 类的 this 指向问题，函数式组件，类式组件，事件绑定，state 值的取改

@@ -2,6 +2,7 @@
 title: vscode工具
 data: 2022-12-07 17:00
 tags: 开发工具
+categories: 工具
 ---
 
 vscode官网下载几kb网速，太慢了，解决下载速度慢的问题

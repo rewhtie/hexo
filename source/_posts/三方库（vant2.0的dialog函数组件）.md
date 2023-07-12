@@ -3,6 +3,7 @@ title: vant2.0的dialog函数组件实现异步关闭
 data: 2022-08-12 14：01
 tags:
   - 三方库
+categories: 插件、依赖
 ---
 
 dialog 弹出框，取消按钮、确认按钮实现异步关闭不互相干扰（当点击确认异步任务，依然可以点击取消按钮执行异步任务），需要在执行完确认按钮的异步任务之前，禁用取消按钮的点击事件，vant3.0 已经添加了 confirmButtonDisabled、cancelButtonDisabled 禁用确认、取消按钮的属性配置。

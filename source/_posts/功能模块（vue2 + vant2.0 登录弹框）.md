@@ -3,6 +3,7 @@ title: vue2 + vant2.0登录功能模块
 data: 2022-12-09 12:00
 tag:
   - 功能模块
+categories: 组件
 ---
 
 vue2.0 + vant2.0(button按钮、Totast轻提示) 实现登录获取验证码, 验证码60s倒计时，手机合规校验，验证码校验

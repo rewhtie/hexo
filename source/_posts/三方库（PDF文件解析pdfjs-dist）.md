@@ -4,6 +4,7 @@ data: 2022-06-06 12:00
 tags:
   - 文件上传
   - 三方库
+categories: 插件、依赖
 ---
 
 pdfjs-dist基础使用，以及 pdf 文件流，以图片墙形式展示

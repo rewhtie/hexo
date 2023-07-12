@@ -1,6 +1,7 @@
 ---
 title: element-plus国际化
 data: 2021-11-26 14：01
+categories: 插件、依赖
 tags:  
     - 三方库
 ---

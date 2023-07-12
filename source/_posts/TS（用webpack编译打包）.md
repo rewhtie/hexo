@@ -2,6 +2,7 @@
 title: TypeScript通过webpack打包编译配置项
 data: 2021-12-27 13:00
 tags: TypeScript
+categories: 开发语言
 ---
 
 webpack配置项打包
