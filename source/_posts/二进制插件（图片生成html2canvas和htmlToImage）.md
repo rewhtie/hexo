@@ -1,8 +1,9 @@
 ---
-layout: post
 title: html2canvas、htmlToImage食用指南
 date: 2023-07-12 15:30:02
-tags: 三方库
+tags: 
+	- 三方库
+	- 文件
 categories: 插件、依赖
 ---
 

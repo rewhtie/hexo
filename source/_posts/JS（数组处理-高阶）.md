@@ -2,6 +2,7 @@
 title: JavaScript数组方法——高阶
 data: 2023-06-11 10:42
 tags: JavaScript
+categories: 开发语言
 ---
 
 系统化的数组方法: 偏客制化

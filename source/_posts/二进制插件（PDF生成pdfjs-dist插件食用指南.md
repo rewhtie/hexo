@@ -2,7 +2,7 @@
 title: pdfjs-dist插件食用指南
 data: 2022-06-06 12:00
 tags:
-  - 文件上传
+  - 文件
   - 三方库
 categories: 插件、依赖
 ---

@@ -2,6 +2,7 @@
 title: js内卷大法
 data: 2021-11-18 12:00
 tags: JavaScript
+categories: 开发语言
 ---
 
 你写的代码这么简单？升级一下你的逼格吧，小伙伴

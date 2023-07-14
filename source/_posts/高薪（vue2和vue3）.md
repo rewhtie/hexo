@@ -2,10 +2,8 @@
 ---
 title: Vue2、vue3
 data: 2022-03-11 17:00
-tags: 
-- 高薪之路
+tags: 高薪之路
 categories: 知识点
-
 ---
 
 Vue2的知识点，Vue3的特性，两者之间的差别

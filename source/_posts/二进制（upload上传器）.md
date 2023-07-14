@@ -2,7 +2,7 @@
 title: upload上传器
 data: 2022-02-23 12:00
 tags: 
-- 文件上传
+- 文件
 categories: 组件
 ---
 

@@ -3,6 +3,7 @@ title: react生命周期
 data: 2022-06-13 16:00
 tags:
   - react
+categories: 框架
 ---
 
 包括 react 旧生命周期和新生命周期，初始化、视图更新分别对应的生命周期流程

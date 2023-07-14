@@ -2,6 +2,7 @@
 title: js类的继承
 data: 2022-6-11 10:42
 tags: JavaScript
+categories: 开发语言
 ---
 
 复习类的知识点
