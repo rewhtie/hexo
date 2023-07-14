@@ -4,13 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pdfjs-dist插件食用指南, BlueEyes">
-    <meta name="description" content="pdfjs-dist基础使用，以及 pdf 文件流，以图片墙形式展示
-
-
-
-一、安装依赖引入npm install pdfjs-dist
-import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
+    <meta name="keywords" content="二进制插件（zipjs食用指南）, BlueEyes">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +17,7 @@ import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pdfjs-dist插件食用指南 | BlueEyes</title>
+    <title>二进制插件（zipjs食用指南） | BlueEyes</title>
     <link rel="icon" type="image/png" href="/hexo/favicon.png">
     
 
@@ -340,12 +335,12 @@ import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/hexo/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/hexo/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pdfjs-dist插件食用指南</h1>
+                    <h1 class="description center-align post-title">二进制插件（zipjs食用指南）</h1>
                 </div>
             </div>
         </div>
@@ -373,23 +368,14 @@ import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
                                 <span class="chip bg-color">三方库</span>
                             </a>
                         
-                            <a href="/hexo/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
-                                <span class="chip bg-color">文件上传</span>
+                            <a href="/hexo/tags/%E6%96%87%E4%BB%B6/">
+                                <span class="chip bg-color">文件</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/hexo/categories/%E6%8F%92%E4%BB%B6%E3%80%81%E4%BE%9D%E8%B5%96/" class="post-category">
-                                插件、依赖
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -398,7 +384,7 @@ import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-07
+                    2023-07-12
                 </div>
                 
 
@@ -412,14 +398,14 @@ import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    849
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -442,146 +428,7 @@ import * as PDFJS from &amp;#39;pdfjs-dist&amp;#x2F;legacy&amp;">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>pdfjs-dist基础使用，以及 pdf 文件流，以图片墙形式展示</p>
-<a id="more"></a>
-
-
-<h3 id="一、安装依赖引入"><a href="#一、安装依赖引入" class="headerlink" title="一、安装依赖引入"></a>一、安装依赖引入</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install pdfjs-dist<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import * as PDFJS from &#39;pdfjs-dist&#x2F;legacy&#x2F;build&#x2F;pdf.js&#39;
-import &#123; PDFDocumentProxy &#125; from &#39;pdfjs-dist&#x2F;types&#x2F;src&#x2F;display&#x2F;api&#39;
-PDFJS.GlobalWorkerOptions.workerSrc &#x3D; require(&#39;pdfjs-dist&#x2F;build&#x2F;pdf.worker.entry&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="二、pdf-在线URL文件解析"><a href="#二、pdf-在线URL文件解析" class="headerlink" title="二、pdf 在线URL文件解析"></a>二、pdf 在线URL文件解析</h3><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const loadFile &#x3D; () &#x3D;&gt; &#123;
-  &#x2F;&#x2F; const loadingTask &#x3D; PDFJS.getDocument(&#39;https:&#x2F;&#x2F;file-test.midiplusedu.com&#x2F;2023&#x2F;06&#x2F;20&#x2F;4GmLczjSQtWcxduijTui9FAyl2j73trDRTm1IbvKDE7o3HdIXsBUmODAdh9ZkAdD.pdf&#39;)
-  const loadingTask &#x3D; PDFJS.getDocument(textBook.value)
-  loadingTask.promise.then((pdf) &#x3D;&gt; &#123;
-    total.value &#x3D; pdf.numPages
-    renderPage(pdf)
-  &#125;)
-&#125;
-const renderPage &#x3D; async (pdf: PDFDocumentProxy) &#x3D;&gt; &#123;
-  for (const i of [...new Array(pdf.numPages).keys()]) &#123;
-    const canvas &#x3D; document.createElement(&#39;canvas&#39;) as HTMLCanvasElement
-    canvas.id &#x3D; &#96;canvas_$&#123;i + 1&#125;&#96;
-    &#x2F;&#x2F; 页数默认加1   
-    const page &#x3D; await pdf.getPage(i + 1)
-    &#x2F;&#x2F; 缩小倍数
-    const viewport &#x3D; page.getViewport(&#123; scale: 1 &#125;)
-    const scale &#x3D; window.innerHeight &#x2F; viewport.height 
-    const context &#x3D; canvas.getContext(&#39;2d&#39;) as any
-    const scaleViewport &#x3D; page.getViewport(&#123; scale: scale &#125;)
-    canvas.height &#x3D; scaleViewport.height
-    canvas.width &#x3D; canvasWidth.value &#x3D; scaleViewport.width
-    const renderContext &#x3D; &#123;
-      canvasContext: context,
-      viewport: scaleViewport,
-    &#125;
-    page.render(renderContext)
-    canvasRef.value.appendChild(canvas)
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="四、示例、ant上传组件配合pdfjs-dist展示文件墙"><a href="#四、示例、ant上传组件配合pdfjs-dist展示文件墙" class="headerlink" title="四、示例、ant上传组件配合pdfjs-dist展示文件墙"></a>四、示例、ant上传组件配合pdfjs-dist展示文件墙</h3><blockquote>
-<p>上传PDF，需要展示所有页，形成图片墙<br> 更换上传文件需要把文件墙清空<br> 回显的时候文件墙需要解析</p>
-</blockquote>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a-upload</span>
-  <span class="token attr-name"><span class="token namespace">v-model:</span>file-list</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fileList<span class="token punctuation">"</span></span>
-  <span class="token attr-name">:show-upload-list</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>showUploadList<span class="token punctuation">"</span></span>
-  <span class="token attr-name">:list-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fileType === <span class="token punctuation">'</span>file<span class="token punctuation">'</span> ? <span class="token punctuation">'</span>text<span class="token punctuation">'</span> : <span class="token punctuation">'</span>picture-card<span class="token punctuation">'</span><span class="token punctuation">"</span></span>
-  <span class="token attr-name">:customRequest</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>downloadFilesCustomRequest<span class="token punctuation">"</span></span>
-<span class="token punctuation">></span></span>
-  <span class="token comment">&lt;!-- pdf图片方式 --></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fileType === <span class="token punctuation">'</span>pdf<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>loading-outlined</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loadingPDF<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>loading-outlined</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>canvasRef<span class="token punctuation">"</span></span> <span class="token attr-name">v-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>thumbUrl<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>canvas<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a-upload</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 自定义上传文件事件</span>
-<span class="token keyword">const</span> <span class="token function-variable function">downloadFilesCustomRequest</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> file <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> suffix <span class="token operator">=</span> file<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token comment">// 检验文件格式</span>
-  <span class="token keyword">let</span> accept <span class="token operator">=</span> props<span class="token punctuation">.</span>accept
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>accept<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>suffix<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> uploadType <span class="token operator">=</span> accept<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'、'</span><span class="token punctuation">)</span>
-    message<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">文件格式不正确，请选择</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>uploadType<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">格式文件！</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">const</span> isLt2M <span class="token operator">=</span> file<span class="token punctuation">.</span>size <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">&lt;</span> props<span class="token punctuation">.</span>fileSize
-  <span class="token comment">// 判断文件大小</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isLt2M<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    message<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">文件大小不能超过</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>props<span class="token punctuation">.</span>fileSize<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">MB!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">let</span> param <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  param<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"file"</span><span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  param<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span> file<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  param<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"thumb"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment">// 二进制文件请求接口，返回链接</span>
-  <span class="token keyword">const</span> api <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>uploadApi <span class="token keyword">as</span> Function<span class="token punctuation">)</span> <span class="token operator">||</span> uploadFileApi<span class="token punctuation">;</span>
-  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> code<span class="token punctuation">,</span> data <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">api</span><span class="token punctuation">(</span>param<span class="token punctuation">,</span> props<span class="token punctuation">.</span>parameter<span class="token operator">?.</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"upload"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-        state<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> file<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
-        <span class="token operator">...</span>data<span class="token punctuation">,</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"upload"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-      state<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 获取标签节点，等同于vue2的this.$ref</span>
-<span class="token keyword">const</span> canvasRef <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment">// 文件读取很慢，需要一个loading控制加载状态</span>
-<span class="token keyword">const</span> loadingPDF <span class="token operator">=</span> ref <span class="token operator">&lt;</span> boolean <span class="token operator">></span> <span class="token boolean">false</span>
-<span class="token comment">// 读取pdf文件流</span>
-<span class="token keyword">const</span> <span class="token function-variable function">pdf2html</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token parameter">url</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> canvas
-  <span class="token comment">// 上传文件不止是pdf，也可能是图片，需要校验 </span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'.pdf'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    loadingPDF<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">true</span>
-    <span class="token comment">// 删除所有的子节点，pdf一个文件一般有n页，需要展示n张图片，所以更换文件时需要把所有子节点全部删除</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>childNodes<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> k<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>childNodes<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">const</span> pdf <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token constant">PDFJS</span><span class="token punctuation">.</span><span class="token function">getDocument</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>promise
-    loadingPDF<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">false</span>
-    <span class="token comment">// 遍历渲染pdf文件</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> i <span class="token keyword">of</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>pdf<span class="token punctuation">.</span>numPages<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span>
-      canvas<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">'canvas'</span>
-      <span class="token comment">// 页数默认加1   </span>
-      <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> pdf<span class="token punctuation">.</span><span class="token function">getPage</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-      <span class="token comment">// 缩小倍数</span>
-      <span class="token keyword">const</span> scale <span class="token operator">=</span> <span class="token number">0.18</span>
-      <span class="token keyword">const</span> viewport <span class="token operator">=</span> page<span class="token punctuation">.</span><span class="token function">getViewport</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> scale <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-      <span class="token keyword">const</span> context <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span>
-      canvas<span class="token punctuation">.</span>height <span class="token operator">=</span> viewport<span class="token punctuation">.</span>height
-      canvas<span class="token punctuation">.</span>width <span class="token operator">=</span> viewport<span class="token punctuation">.</span>width
-      <span class="token keyword">const</span> renderContext <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        canvasContext<span class="token operator">:</span> context<span class="token punctuation">,</span>
-        viewport<span class="token operator">:</span> viewport<span class="token punctuation">,</span>
-      <span class="token punctuation">&#125;</span>
-      page<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>renderContext<span class="token punctuation">)</span>
-      canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
-    canvas<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">'canvas'</span>
-    canvas<span class="token punctuation">.</span>src <span class="token operator">=</span> url
-    canvas<span class="token punctuation">.</span>style <span class="token operator">=</span> <span class="token string">'max-height: 128px;'</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>childNodes<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> k<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>childNodes<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    canvasRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<!-- more -->
-
+                
                 
             </div>
             <hr/>
@@ -607,7 +454,7 @@ const renderPage &#x3D; async (pdf: PDFDocumentProxy) &#x3D;&gt; &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/rewhtie/hexo/hexo/2023/06/07/san-fang-ku-pdf-wen-jian-jie-xi-pdfjs-dist/">https://github.com/rewhtie/hexo/hexo/2023/06/07/san-fang-ku-pdf-wen-jian-jie-xi-pdfjs-dist/</a>
+                    <a href="https://github.com/rewhtie/hexo/hexo/2023/07/12/er-jin-zhi-cha-jian-ya-suo-bao-sheng-cheng-zipjs-shi-yong-zhi-nan/">https://github.com/rewhtie/hexo/hexo/2023/07/12/er-jin-zhi-cha-jian-ya-suo-bao-sheng-cheng-zipjs-shi-yong-zhi-nan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,8 +496,8 @@ const renderPage &#x3D; async (pdf: PDFDocumentProxy) &#x3D;&gt; &#123;
                                     <span class="chip bg-color">三方库</span>
                                 </a>
                             
-                                <a href="/hexo/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
-                                    <span class="chip bg-color">文件上传</span>
+                                <a href="/hexo/tags/%E6%96%87%E4%BB%B6/">
+                                    <span class="chip bg-color">文件</span>
                                 </a>
                             
                         </div>
@@ -729,46 +576,48 @@ const renderPage &#x3D; async (pdf: PDFDocumentProxy) &#x3D;&gt; &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/hexo/2023/06/07/quan-ju-dong-tai-jia-zai-script/">
+                <a href="/hexo/2023/07/12/er-jin-zhi-cha-jian-ya-suo-bao-sheng-cheng-zipjs-shi-yong-zhi-nan/">
                     <div class="card-image">
                         
                         
-                        <img src="/hexo/medias/featureimages/23.jpg" class="responsive-img" alt="动态加载script执行回调">
+                        <img src="/hexo/medias/featureimages/22.jpg" class="responsive-img" alt="二进制插件（zipjs食用指南）">
                         
-                        <span class="card-title">动态加载script执行回调</span>
+                        <span class="card-title">二进制插件（zipjs食用指南）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            加载脚本的常用代码封装成函数，并执行完成的回调，成功的回调，失败的回调
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-12
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/hexo/categories/%E5%87%BD%E6%95%B0/" class="post-category">
-                                    函数
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            青眼魔术
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/hexo/tags/%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0/">
-                        <span class="chip bg-color">全局函数</span>
+                    <a href="/hexo/tags/%E4%B8%89%E6%96%B9%E5%BA%93/">
+                        <span class="chip bg-color">三方库</span>
+                    </a>
+                    
+                    <a href="/hexo/tags/%E6%96%87%E4%BB%B6/">
+                        <span class="chip bg-color">文件</span>
                     </a>
                     
                 </div>
@@ -782,24 +631,24 @@ const renderPage &#x3D; async (pdf: PDFDocumentProxy) &#x3D;&gt; &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/hexo/2023/06/07/san-fang-ku-vue-quill-text-fu-wen-ben-zu-jian/">
+                <a href="/hexo/2023/07/12/er-jin-zhi-cha-jian-tu-pian-sheng-cheng-html2canvas-he-htmltoimage/">
                     <div class="card-image">
                         
                         
-                        <img src="/hexo/medias/featureimages/17.jpg" class="responsive-img" alt="vue-quill-text富文本踩坑">
+                        <img src="/hexo/medias/featureimages/11.jpg" class="responsive-img" alt="html2canvas、htmlToImage食用指南">
                         
-                        <span class="card-title">vue-quill-text富文本踩坑</span>
+                        <span class="card-title">html2canvas、htmlToImage食用指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            实现功能点踩坑：1、基础使用；2、插入标签；3、复制黏贴格式化文本、禁止图片复制；4、本地资源上传重写upload组件文件上传
+                            获取元素生成图片
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-12
                             </span>
                         <span class="publish-author">
                             
@@ -818,6 +667,10 @@ const renderPage &#x3D; async (pdf: PDFDocumentProxy) &#x3D;&gt; &#123;
                     
                     <a href="/hexo/tags/%E4%B8%89%E6%96%B9%E5%BA%93/">
                         <span class="chip bg-color">三方库</span>
+                    </a>
+                    
+                    <a href="/hexo/tags/%E6%96%87%E4%BB%B6/">
+                        <span class="chip bg-color">文件</span>
                     </a>
                     
                 </div>
