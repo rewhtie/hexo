@@ -6,7 +6,7 @@
   <link href="https://github.com/rewhtie/hexo/atom.xml" rel="self"/>
   
   <link href="https://github.com/rewhtie/hexo/"/>
-  <updated>2023-07-12T09:26:26.006Z</updated>
+  <updated>2023-07-18T01:18:44.652Z</updated>
   <id>https://github.com/rewhtie/hexo/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>indexDB（前端数据库）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/07/18/indexdb-qian-duan-shu-ju-ku/"/>
+    <id>https://github.com/rewhtie/hexo/2023/07/18/indexdb-qian-duan-shu-ju-ku/</id>
+    <published>2023-07-18T00:43:15.000Z</published>
+    <updated>2023-07-18T01:18:44.652Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://dexie.org/docs/API-Reference&quot;&gt;indexDB API参考官网&lt;/a&gt; &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数据库" scheme="https://github.com/rewhtie/hexo/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="数据库" scheme="https://github.com/rewhtie/hexo/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>electron（new BrowserWindow配置项）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/07/17/electron-browserwindow-pei-zhi-xiang/"/>
+    <id>https://github.com/rewhtie/hexo/2023/07/17/electron-browserwindow-pei-zhi-xiang/</id>
+    <published>2023-07-17T11:46:01.000Z</published>
+    <updated>2023-07-17T12:34:12.502Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;基础配置项&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="框架" scheme="https://github.com/rewhtie/hexo/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="electron" scheme="https://github.com/rewhtie/hexo/tags/electron/"/>
+    
+  </entry>
   
   <entry>
     <title>二进制插件（zipjs食用指南）</title>
@@ -342,40 +380,6 @@
     
     
     <summary type="html">&lt;p&gt;提升开发体验，便利开发利器，顺便收入一些实用文章&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人类的精华是一代代的头发凝聚而成</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-kai-fa-keng-dian/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-kai-fa-keng-dian/</id>
-    <published>2023-06-07T12:10:23.548Z</published>
-    <updated>2023-07-12T01:51:03.869Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;站在巨人的肩膀上眺望天空并不可耻，可耻的是白嫖先人的智慧、却对其嗤之以鼻&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>树莓派的搭建</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-shu-mei-pai-jian-zhan/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-shu-mei-pai-jian-zhan/</id>
-    <published>2023-06-07T12:10:23.548Z</published>
-    <updated>2023-06-21T09:08:41.931Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;树莓派搭建web服务&lt;/p&gt;</summary>
     
     
     

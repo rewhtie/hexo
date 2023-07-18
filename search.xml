@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>indexDB（前端数据库）</title>
+      <link href="/hexo/2023/07/18/indexdb-qian-duan-shu-ju-ku/"/>
+      <url>/hexo/2023/07/18/indexdb-qian-duan-shu-ju-ku/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://dexie.org/docs/API-Reference">indexDB API参考官网</a> </p><a id="more"></a><h3 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h3><h4 id="创建数据库新建表"><a href="#创建数据库新建表" class="headerlink" title="创建数据库新建表"></a>创建数据库新建表</h4><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const db &#x3D; new Dexie(&quot;MyDatabase&quot;);db.version(1).stores(&#123;friends: &quot;++id&quot;,gameSessions: &quot;id&quot;&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="数据库查询"><a href="#数据库查询" class="headerlink" title="数据库查询"></a>数据库查询</h4><p>查询对应name值为’david’的所有数据</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const friends &#x3D; await db.friends.where(&quot;name&quot;).equalsIgnoreCase(&quot;david&quot;).toArray();for (const friend of friends) &#123;  console.log(&quot;Found: &quot; + friend.name + &quot;. Phone: &quot; + friend.phoneNumber);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>查询对应name值为’david’，且对应age值在23-43之间符合条件的所有数据</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const davids &#x3D; await db.friends.where([&quot;name&quot;, &quot;age&quot;])  .between([&quot;David&quot;, 23], [&quot;David&quot;, 43], true, true)  .toArray();for (const david of davids) &#123;  console.log(&#96;Found a David with age $&#123;david.age&#125;&#96;);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>表添加数据（object为对象）</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">db.friends.add(object)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>表数据更新（key：表key值；object：表value值）</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">db.friends.update(key | object, changeObject)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>得到表的所有key值，查出数据库总共有几条（数组length）</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">db.friends.keys()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">where &#x2F;&#x2F; 查表头id、name、age之类equals &#x2F;&#x2F; 查索引，表头id列的keyequalsIgnoreCase &#x2F;&#x2F; 查值keys &#x2F;&#x2F; 获取表所有key值，得到数据库数据总数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="dexie-js实现二次封装实例代码"><a href="#dexie-js实现二次封装实例代码" class="headerlink" title="dexie.js实现二次封装实例代码"></a>dexie.js实现二次封装实例代码</h3><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import Dexie from &#39;dexie&#39;import &#123; databaseId &#125; from &#39;@&#x2F;store&#x2F;main&#39;import &#123; Slide &#125; from &#39;@&#x2F;types&#x2F;slides&#39;import &#123; LOCALSTORAGE_KEY_DISCARDED_DB &#125; from &#39;@&#x2F;configs&#x2F;storage&#39;export interface writingBoardImg &#123;  id: string | number  dataURL: Array&lt;string&gt;,&#125;export interface Snapshot &#123;  index: number  slides: Slide[]&#125;const databaseNamePrefix &#x3D; &#39;PPTist&#39;&#x2F;&#x2F; 删除失效&#x2F;过期的数据库&#x2F;&#x2F; 应用关闭时（关闭或刷新浏览器），会将其数据库ID记录在 localStorage 中，表示该ID指向的数据库已失效&#x2F;&#x2F; 当应用初始化时，检查当前所有数据库，将被记录失效的数据库删除&#x2F;&#x2F; 另外，距离初始化时间超过12小时的数据库也将被删除（这是为了防止出现因意外未被正确删除的库）export const deleteDiscardedDB &#x3D; async () &#x3D;&gt; &#123;  const now &#x3D; new Date().getTime()  const localStorageDiscardedDB &#x3D; localStorage.getItem(LOCALSTORAGE_KEY_DISCARDED_DB)  const localStorageDiscardedDBList: string[] &#x3D; localStorageDiscardedDB ? JSON.parse(localStorageDiscardedDB) : []  const databaseNames &#x3D; await Dexie.getDatabaseNames()  const discardedDBNames &#x3D; databaseNames.filter(name &#x3D;&gt; &#123;    if (name.indexOf(databaseNamePrefix) &#x3D;&#x3D;&#x3D; -1) return false        const [prefix, id, time] &#x3D; name.split(&#39;_&#39;)    if (prefix !&#x3D;&#x3D; databaseNamePrefix || !id || !time) return true    if (localStorageDiscardedDBList.includes(id)) return true    if (now - (+time) &gt;&#x3D; 1000 * 60 * 60 * 12) return true    return false  &#125;)  for (const name of discardedDBNames) Dexie.delete(name)  localStorage.removeItem(LOCALSTORAGE_KEY_DISCARDED_DB)&#125;&#x2F;&#x2F; 新建PPTistDB数据库 - 数据下新建表名为‘snapshots’、‘writingBoardImgs’表 - key值为idclass PPTistDB extends Dexie &#123;  public snapshots: Dexie.Table&lt;Snapshot, number&gt;  public writingBoardImgs: Dexie.Table&lt;writingBoardImg, number&gt;  public constructor() &#123;    super(&#96;$&#123;databaseNamePrefix&#125;_$&#123;databaseId&#125;_$&#123;new Date().getTime()&#125;&#96;)    &#x2F;&#x2F; 创建两张表    this.version(1).stores(&#123;      snapshots: &#39;++id&#39;,      writingBoardImgs: &#39;++id&#39;,    &#125;)    this.snapshots &#x3D; this.table(&#39;snapshots&#39;)    this.writingBoardImgs &#x3D; this.table(&#39;writingBoardImgs&#39;)  &#125;&#125;export const db &#x3D; new PPTistDB()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><!-- more -->]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>electron（new BrowserWindow配置项）</title>
+      <link href="/hexo/2023/07/17/electron-browserwindow-pei-zhi-xiang/"/>
+      <url>/hexo/2023/07/17/electron-browserwindow-pei-zhi-xiang/</url>
+      
+        <content type="html"><![CDATA[<p>基础配置项</p><a id="more"></a><h3 id="new-BrowserWindow-基础配置使用"><a href="#new-BrowserWindow-基础配置使用" class="headerlink" title="new BrowserWindow 基础配置使用"></a>new BrowserWindow 基础配置使用</h3><p><a href="https://www.electronjs.org/zh/docs/latest/api/browser-window#new-browserwindowoptions">BrowserWindow api</a></p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const mainWin &#x3D; new BrowserWindow(&#123;show: false, &#x2F;&#x2F; 先隐藏窗口，不然加载index.html会出现短暂空白frame: false &#x2F;&#x2F; 隐藏默认菜单、无边框窗口width: 100, &#x2F;&#x2F; 窗口宽度 ; maxWidth | minWidthheight: 200, &#x2F;&#x2F; 窗口高度 ; maxHeight | minHeighticon: &#39;&#39;, &#x2F;&#x2F; 图标路径title: &#39;萌新&#39;, &#x2F;&#x2F; 窗口标题，记得index.html的title要为空autoHideMenuBar: true,&#x2F;&#x2F; 允许渲染进程使用node.js集成环境webPreferences: &#123;preload: path.resolve(__dirname, process.env.QUASAR_ELECTRON_PRELOAD!),webSecurity: false,nodeIntegrationInWorke: true, &#x2F;&#x2F;是否在Web工作器中启用了Node集成. 默认值为 false. nodeIntegration: true &#x2F;&#x2F; 是否启用Node integration. 默认值为 false.&#125;&#125;)mainWin.loadFile(&#39;index.html&#39;)mainWin.on(&#39;ready-to-show&#39;, () &#x3D;&gt; &#123;&#x2F;&#x2F; 加载完页面窗口显示mainWin.show()&#125;)&#x2F;&#x2F; 关闭窗口需要释放窗口mainWin.on(&#39;closed&#39;, () &#x3D;&gt; &#123;mainWin &#x3D; null&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="调用api实现窗口的-口-X-事件"><a href="#调用api实现窗口的-口-X-事件" class="headerlink" title="调用api实现窗口的 - 口 X 事件"></a>调用api实现窗口的 - 口 X 事件</h3><p><a href="https://www.electronjs.org/zh/docs/latest/tutorial/ipc">ipc 进程通信</a></p><!-- more -->]]></content>
+      
+      
+      <categories>
+          
+          <category> 框架 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> electron </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二进制插件（zipjs食用指南）</title>
       <link href="/hexo/2023/07/12/er-jin-zhi-cha-jian-ya-suo-bao-sheng-cheng-zipjs-shi-yong-zhi-nan/"/>
       <url>/hexo/2023/07/12/er-jin-zhi-cha-jian-ya-suo-bao-sheng-cheng-zipjs-shi-yong-zhi-nan/</url>
