@@ -403,14 +403,14 @@ const a = [1,2,3];
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-12
+                    2023-08-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
@@ -794,16 +794,32 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res_Arr<span class="token punctuation">)</span> <span class="token comment">// 打印['AA','DD']</span>
 <span class="token comment">//filter会返回一个符合条件的数组，indexOf索引>-1作为判断条件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>两个数组对比，去除两个数组里相等的值</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F; 同上找出相同数组同样使用indexOf，只是判断条件改变
+const a &#x3D; [1, 2, 3, 4, 5];
+const b &#x3D; [3, 4, 5];
+a &#x3D; a.filter(item &#x3D;&gt; b.indexOf(item) &#x3D;&#x3D; -1);
+console.log(a); &#x2F;&#x2F; [1, 2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F; 另一种实现
+const a &#x3D; [1,2,3,4,5];
+const b &#x3D; [3,4,5];
+const set &#x3D; new Set(b);
+const filtered &#x3D; a.filter(item &#x3D;&gt; !set.has(item));
+console.log(filtered); &#x2F;&#x2F; [1, 2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font>lodash库的without,pull,xor也能实现</font></p>
 <h2 id="计算数组元素出现的次数-列举最装逼简洁写法"><a href="#计算数组元素出现的次数-列举最装逼简洁写法" class="headerlink" title="计算数组元素出现的次数(列举最装逼简洁写法)"></a>计算数组元素出现的次数(列举最装逼简洁写法)</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Tiff'</span><span class="token punctuation">,</span> <span class="token string">'Bruce'</span><span class="token punctuation">,</span> <span class="token string">'Alice'</span><span class="token punctuation">]</span>
 <span class="token keyword">const</span> nameNum <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">pre<span class="token punctuation">,</span> cur</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>cur <span class="token keyword">in</span> pre<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    pre<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token operator">++</span>
-<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    pre<span class="token punctuation">[</span>cur<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">return</span> pre
-<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nameNum<span class="token punctuation">)</span> <span class="token comment">//打印&#123;Alice: 2, Bob: 1, Tiff: 1, Bruce: 1&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cur <span class="token keyword">in</span> pre<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        pre<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token operator">++</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        pre<span class="token punctuation">[</span>cur<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> pre
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nameNum<span class="token punctuation">)</span> <span class="token comment">//打印&#123;Alice: 2, Bob: 1, Tiff: 1, Bruce: 1&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <!-- more -->
 
                 
@@ -1231,7 +1247,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">57.8k</span>
+                        class="white-color">58k</span>
             
             
             
