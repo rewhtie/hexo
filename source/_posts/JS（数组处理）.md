@@ -446,18 +446,40 @@ categories: 开发语言
     //filter会返回一个符合条件的数组，indexOf索引>-1作为判断条件
 ```
 
+- 两个数组对比，去除两个数组里相等的值
+
+```ts
+    // 同上找出相同数组同样使用indexOf，只是判断条件改变
+    const a = [1, 2, 3, 4, 5];
+    const b = [3, 4, 5];
+    a = a.filter(item => b.indexOf(item) == -1);
+    console.log(a); // [1, 2]
+```
+
+```ts
+    // 另一种实现
+    const a = [1,2,3,4,5];
+    const b = [3,4,5];
+    const set = new Set(b);
+    const filtered = a.filter(item => !set.has(item));
+    console.log(filtered); // [1, 2]
+```
+
+<font>lodash库的without,pull,xor也能实现</font>
+
 ## 计算数组元素出现的次数(列举最装逼简洁写法)
 
 ```js
     const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
     const nameNum = names.reduce((pre, cur) => {
-    if (cur in pre) {
-        pre[cur]++
-    } else {
-        pre[cur] = 1
-    }
-    return pre
-    }, {})
+        if (cur in pre) {
+            pre[cur]++
+        } else {
+            pre[cur] = 1
+        }
+        return pre
+        }, {}
+    )
     console.log(nameNum) //打印{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
 ```
 
