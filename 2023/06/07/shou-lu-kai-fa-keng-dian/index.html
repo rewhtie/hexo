@@ -395,21 +395,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-12
+                    2023-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -524,6 +524,42 @@ for (let i &#x3D; 0; i &lt; videos.length; i++) &#123;
 </blockquote>
 <h2 id="el-table后端返回10条数据、但是表格莫名其妙只展示了8条数据"><a href="#el-table后端返回10条数据、但是表格莫名其妙只展示了8条数据" class="headerlink" title="el-table后端返回10条数据、但是表格莫名其妙只展示了8条数据"></a>el-table后端返回10条数据、但是表格莫名其妙只展示了8条数据</h2><p><font color="red">prop必传字段是空的，有时候接口字段是对象嵌套藏的很深，找半天，傻逼element不会报错没有任何提示，直接给数据隐藏了</font><br><font color="red">prop一定不能为空！！！</font></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table-column</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>编号<span class="token punctuation">"</span></span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table-column</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="el-tree组件一堆坑点"><a href="#el-tree组件一堆坑点" class="headerlink" title="el-tree组件一堆坑点"></a>el-tree组件一堆坑点</h2><p><font color="red">勾选相关的api</font></p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;默认勾选的节点的 key 的数组	
+:default-checked-keys&#x3D;&quot;[SP1000, SP2000]&quot;	
+
+&#x2F;&#x2F;默认展开的节点的 key 的数组	
+:default-expanded-keys&#x3D;&quot;[SP1000, SP2000]&quot;
+
+&#x2F;&#x2F;是否在点击节点的时候选中节点，默认值为 false，即只有在点击复选框时才会选中节点。	
+:check-on-click-node&#x3D;&quot;true&quot;	
+
+&#x2F;&#x2F;展示数据
+:data&#x3D;&quot;treeData&quot;	
+
+&#x2F;&#x2F; label对应树形展示文本，children子节点，对应treeData对象属性
+:props&#x3D;&quot;&#123; label: &#39;display_name&#39;, children: &#39;child_permission&#39; &#125;&quot; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const spRouter &#x3D; this.$refs.spRouter	
+
+&#x2F;&#x2F; getCheckedKeys获取勾选项，getHalfCheckedKeys获取已经被勾选了的子节点的父节点
+const spRouterKeys &#x3D; [...spRouter.getCheckedKeys(), ...spRouter.getHalfCheckedKeys()]
+
+&#x2F;&#x2F; 设置某个节点是否被选中，常常配合同时勾选另一项使用
+spRouter.setChecked(SP1000, true)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>勾选节点：父节点作为被勾选项，回显的时候会导致子节点下的所有项被勾选（非常隐蔽，找不出问题）</li>
+</ul>
+<p><font color="blue">解决方案一：check-strictly设置为true，父子节点脱离关系</font></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-tree</span> <span class="token attr-name">:check-strictly</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><font color="blue">解决方案二：怼死后端，只传勾选最小级别的节点给后端，后端自己处理关系，组装好数据结构返回</font></p>
+<p><font color="blue">解决方案三：数据处理，只保留最小级的节点（最小级节点需要有共性，约定好就ok）</font></p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const spRouterKeys &#x3D; res.data
+  .filter(item &#x3D;&gt; &#123;
+    if (item.item_type &#x3D;&#x3D; 99) &#123;
+      return item
+    &#125;
+  &#125;)
+  .map(item &#x3D;&gt; item.name)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <!-- more -->
 
                 
@@ -947,7 +983,7 @@ for (let i &#x3D; 0; i &lt; videos.length; i++) &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58k</span>
+                        class="white-color">58.3k</span>
             
             
             
