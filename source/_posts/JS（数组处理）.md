@@ -154,10 +154,12 @@ categories: 开发语言
     - 两个参数
     ```js
         const a = [1,2,3,4]
-        const b = a.slice(0,2)
+        const b = a.slice(0,2) // 0, 2下标
         console.log(a) //[1,2,3,4]
         console.log(b) //[1,2]
-        // 截取下标0到下标1的数组，第二个参数它会默认+1，所以我们要slice(0,2)
+
+        const c = a.slice(0, -1)  // 0, 数组最后一位
+        console.log(b) //[1,2,3]
     ```
     - 单个参数
     ```js
