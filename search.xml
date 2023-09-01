@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>三方库（npm包推送）</title>
+      <link href="/hexo/2023/09/01/san-fang-ku-npm-bao-tui-song/"/>
+      <url>/hexo/2023/09/01/san-fang-ku-npm-bao-tui-song/</url>
+      
+        <content type="html"><![CDATA[<p>开源第一步从npm远程包开始（记得注册时翻墙、不然会出现奇怪的错误）</p><a id="more"></a><blockquote><p>1.npm adduser 登陆时看不到密码<br>2.nrm镜像源改过代理的记得回到本源代理，不然会无法登陆<br>3.You do not have permission to publish “demo”. Are you logged in as the correct user? 模块名被使用，更换名字即可<br>4.npm publish推送</p></blockquote><!-- more -->]]></content>
+      
+      
+      <categories>
+          
+          <category> 插件、依赖 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 三方库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二进制（队列请求）</title>
       <link href="/hexo/2023/08/31/er-jin-zhi-dui-lie-qing-qiu/"/>
       <url>/hexo/2023/08/31/er-jin-zhi-dui-lie-qing-qiu/</url>
