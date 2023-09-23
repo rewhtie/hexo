@@ -4,15 +4,14 @@ data: 2023-06-19 16：39：45
 categories: 插件、依赖
 tags: 
 	- 三方库
+  - 项目
 ---
 
-快捷使用 <font color="red">"<\div _flex="~ items-center justify-cente"></\div>"</font> 实现div弹性布局水平垂直居中
+快捷使用 <font color="red">"<\div _flex="~ items-center justify-cente"></\div>"</font> 实现div弹性布局水平垂直居中，更加方便的搬砖
 
 <!-- more -->
 
-```bash
 npm install windicss
-```
 
 #### 1.新建flex样式 plugin/flex.js 文件
 
@@ -272,5 +271,22 @@ import 'windi.css'
 const app = createApp(App)
 app.mount('#app')
 ```
+
+#### 7.常用的命令
+
+
+| 样式 |  格式  |
+|  ----  | ----  |
+|  边框圆角，左上角圆角	|  _border="2px solid [#B6B6B6] rounded-6px rounded-tl-17px"  |
+|  鼠标样式	  |  _cursor="pointer"  |
+|  内边距 y轴上下各6px，x轴左右各2px ，外边距同理	  |  _p="y-6px x-2px"  |
+|  出现动画时间 |  _transition="duration-300"  |
+|  文本超出1行溢出隐藏  |  _line="clamp-1"  |
+|  1/3 宽度   |  _overflow="y-auto" |
+|  滚动条 |  application/msword	          |
+|  弹性布局、水平垂直居中、纵轴  |  _flex="~ items-center justify-center col"  |
+|  鼠标禁用样式、点击样式、三元切换 |  :class="[ visible ? 'w-cursor-not-allowed' : 'w-cursor-pointer' ]"  |
+|  绝对定位，0，右120px，层级9 |  _pos="absolute" _bottom="0" _right="120px" _z="9"  |
+
 
 <!-- more -->
