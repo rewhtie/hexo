@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="人类的精华是一代代的头发凝聚而成, BlueEyes">
-    <meta name="description" content="站在巨人的肩膀上眺望天空并不可耻，可耻的是白嫖先人的智慧、却对其嗤之以鼻
+    <meta name="description" content="开发遇到的坑点整理，小细节让自己更多的时间摸鱼吧
 
 
 子组件v-show失效（vue3）
@@ -13,7 +13,7 @@
 
 思考：目前理解不了
 
-解决：子组件里面有模态框，确保template标签下只有一">
+解决：子组件里面有模态框，确保template标签下只有一个子标签（同vue2写法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -395,21 +395,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-22
+                    2023-09-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -432,7 +432,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>站在巨人的肩膀上眺望天空并不可耻，可耻的是白嫖先人的智慧、却对其嗤之以鼻</p>
+                <p>开发遇到的坑点整理，小细节让自己更多的时间摸鱼吧</p>
 <a id="more"></a>
 
 <h2 id="子组件v-show失效（vue3）"><a href="#子组件v-show失效（vue3）" class="headerlink" title="子组件v-show失效（vue3）"></a>子组件v-show失效（vue3）</h2><ul>
@@ -560,6 +560,31 @@ spRouter.setChecked(SP1000, true)<span aria-hidden="true" class="line-numbers-ro
     &#125;
   &#125;)
   .map(item &#x3D;&gt; item.name)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="el-cascader-级联选择器回显问题"><a href="#el-cascader-级联选择器回显问题" class="headerlink" title="el-cascader 级联选择器回显问题"></a>el-cascader 级联选择器回显问题</h2><ul>
+<li>最后一级是空的时候不展示</li>
+</ul>
+<p><font color="blue">只需要把chilhren变为undefined即可</font></p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const removeEmptyItems &#x3D; (arr) &#x3D;&gt; &#123;
+  const newArr &#x3D; []
+  for (let i &#x3D; 0; i &lt; arr.length; i++) &#123;
+    const item &#x3D; arr[i]
+    if (item.children?.length &gt;&#x3D; 1) &#123;
+      item.children &#x3D; this.removeEmptyItems(item.children)
+    &#125; else &#123;
+      item.children &#x3D; undefined
+    &#125;
+    newArr.push(item)
+  &#125;
+  return newArr
+&#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>数据回显</li>
+</ul>
+<p><font color="blue">传给后端是字符串或者数字，但是回显需要变成数组，如 ‘a’ — [‘a’]才能正常回显</font></p>
+<ul>
+<li>清除数据之后，二级列表还是展示，应该只展示第一层列表才对</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">this.$refs.knowPointRef.$refs.panel.menus &#x3D; [this.$refs.knowPointRef.$refs.panel.store.getNodes()]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <!-- more -->
 
                 
@@ -983,7 +1008,7 @@ spRouter.setChecked(SP1000, true)<span aria-hidden="true" class="line-numbers-ro
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.9k</span>
+                        class="white-color">59.2k</span>
             
             
             
