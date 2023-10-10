@@ -6,7 +6,7 @@
   <link href="https://github.com/rewhtie/hexo/atom.xml" rel="self"/>
   
   <link href="https://github.com/rewhtie/hexo/"/>
-  <updated>2023-09-01T08:37:07.121Z</updated>
+  <updated>2023-10-10T09:31:25.369Z</updated>
   <id>https://github.com/rewhtie/hexo/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git提交撤销本地注释</title>
+    <link href="https://github.com/rewhtie/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/"/>
+    <id>https://github.com/rewhtie/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/</id>
+    <published>2023-10-10T09:26:46.000Z</published>
+    <updated>2023-10-10T09:31:25.369Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;git过滤本地注释，慎用，有时候拉取他人代码会把自己的代码也给干掉&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>三方库（npm包推送）</title>
@@ -372,23 +389,6 @@
     
     
     <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>项目（搭建结构）</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/07/xiang-mu-wen-jian-jie-gou/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/07/xiang-mu-wen-jian-jie-gou/</id>
-    <published>2023-06-07T12:10:23.549Z</published>
-    <updated>2023-06-08T11:24:59.886Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;项目搭建必备：对应各个文件夹的用途&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="项目搭建" scheme="https://github.com/rewhtie/hexo/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   

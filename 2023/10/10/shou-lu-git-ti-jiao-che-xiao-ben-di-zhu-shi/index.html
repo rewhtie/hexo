@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, BlueEyes">
-    <meta name="description" content="个人博客">
+    <meta name="keywords" content="git提交撤销本地注释, BlueEyes">
+    <meta name="description" content="git过滤本地注释，慎用，有时候拉取他人代码会把自己的代码也给干掉
+
+
+找到文件.git的config用记事本打开，加入以下
+[filter &amp;quot;filter-js&amp;quot;]
+	clean &amp;#x3D; sed &amp;#39;&amp;#x">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | BlueEyes</title>
+    <title>git提交撤销本地注释 | BlueEyes</title>
     <link rel="icon" type="image/png" href="/hexo/favicon.png">
     
 
@@ -331,339 +336,479 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/hexo/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">git提交撤销本地注释</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
     <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                青眼魔术
-                
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                                <span class="chip bg-color">收录</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
             </div>
 
-            <div class="description center-align">
+            <div class="post-info">
                 
-                <span id="subtitle"></span>
-                <script src="/hexo/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-10-10
+                </div>
                 
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-10-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    184
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/hexo/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>git过滤本地注释，慎用，有时候拉取他人代码会把自己的代码也给干掉</p>
+<a id="more"></a>
+
+<p>找到文件.git的config用记事本打开，加入以下</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">[filter &quot;filter-js&quot;]
+	clean &#x3D; sed &#39;&#x2F;\\&#x2F;\\*\\*\\s*@filter.*\\*&#x2F;d&#39;
+[filter &quot;filter-css&quot;]
+	clean &#x3D; sed &#39;&#x2F;\\&#x2F;\\&#x2F;\\s*@filter.*&#x2F;d&#39;
+[filter &quot;filter-html&quot;]
+	clean &#x3D; sed &#39;&#x2F;&lt;\\!--\\s*@filter.*--&gt;&#x2F;d&#39;
+[filter &quot;filter-vue&quot;]
+	clean &#x3D; sed -e &#39;&#x2F;\\&#x2F;\\*\\*\\s*@filter.*\\*&#x2F;d&#39; -e &#39;&#x2F;\\&#x2F;\\&#x2F;\\s*@filter.*&#x2F;d&#39; -e &#39;&#x2F;&lt;\\!--\\s*@filter.*--&gt;&#x2F;d&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>找到文件.gitattributes</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">*.ts filter&#x3D;filter-js
+*.js filter&#x3D;filter-js
+*.css filter&#x3D;filter-css
+*.html filter&#x3D;filter-html
+*.vue filter&#x3D;filter-vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">本地vscode
+&#x2F;** @filter 我是注释 *&#x2F;
+const a &#x3D; 1
+
+远程
+const a &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<!-- more -->
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/hexo/about" rel="external nofollow noreferrer">青眼魔术</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/rewhtie/hexo/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/">https://github.com/rewhtie/hexo/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/hexo/about" target="_blank">青眼魔术</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                                    <span class="chip bg-color">收录</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/hexo/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/hexo/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/hexo/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $(function () {
+        $('.tabs').tabs();
+    });
 </script>
-<script>
-    
-      var bannerUrl = "/hexo/medias/featureimages/" + Math.floor(Math.random() * 27) + '.jpg';
-    
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
 
-</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/hexo/medias/featureimages/4.jpg" class="responsive-img" alt="git提交撤销本地注释">
+                        
+                        <span class="card-title">git提交撤销本地注释</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            git过滤本地注释，慎用，有时候拉取他人代码会把自己的代码也给干掉
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            青眼魔术
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/hexo/tags/%E6%94%B6%E5%BD%95/">
+                        <span class="chip bg-color">收录</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/hexo/2023/09/01/san-fang-ku-npm-bao-tui-song/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/hexo/medias/featureimages/10.jpg" class="responsive-img" alt="三方库（npm包推送）">
+                        
+                        <span class="card-title">三方库（npm包推送）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            开源第一步从npm远程包开始（记得注册时翻墙、不然会出现奇怪的错误）
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/hexo/categories/%E6%8F%92%E4%BB%B6%E3%80%81%E4%BE%9D%E8%B5%96/" class="post-category">
+                                    插件、依赖
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/hexo/tags/%E4%B8%89%E6%96%B9%E5%BA%93/">
+                        <span class="chip bg-color">三方库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/hexo/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/hexo/libs/codeBlock/codeShrink.js"></script>
+
 
 
     </div>
-</div>
-
-<main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/hexo/tags/git/" title="git: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="git" style="background-color: #F9EBEA;">git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/CSS/" title="CSS: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="CSS" style="background-color: #F5EEF8;">CSS
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/H5/" title="H5: 12">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="H5" style="background-color: #D5F5E3;">H5
-                        <span class="tag-length">12</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/" title="功能模块: 10">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="功能模块" style="background-color: #E8F8F5;">功能模块
-                        <span class="tag-length">10</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E4%B8%89%E6%96%B9%E5%BA%93/" title="三方库: 14">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="三方库" style="background-color: #FEF9E7;">三方库
-                        <span class="tag-length">14</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/JavaScript/" title="JavaScript: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="JavaScript" style="background-color: #F8F9F9;">JavaScript
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/TypeScript/" title="TypeScript: 5">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="TypeScript" style="background-color: #82E0AA;">TypeScript
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/hexo/" title="hexo: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="hexo" style="background-color: #D7BDE2;">hexo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/react/" title="react: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="react" style="background-color: #A3E4D7;">react
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/uni-app/" title="uni-app: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="uni-app" style="background-color: #85C1E9;">uni-app
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/vue2-0/" title="vue2.0: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="vue2.0" style="background-color: #F8C471;">vue2.0
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/vue3-0/" title="vue3.0: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="vue3.0" style="background-color: #F9E79F;">vue3.0
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0/" title="全局函数: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="全局函数" style="background-color: #E8F8F5;">全局函数
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E6%AD%A3%E5%88%99/" title="正则: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="正则" style="background-color: #D5F5E3;">正则
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/taro/" title="taro: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="taro" style="background-color: #FEF9E7;">taro
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="小程序: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="小程序" style="background-color: #F8C471;">小程序
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" title="微信小程序: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="微信小程序" style="background-color: #82E0AA;">微信小程序
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" title="开发工具: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="开发工具" style="background-color: #F9E79F;">开发工具
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E6%94%B6%E5%BD%95/" title="收录: 7">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="收录" style="background-color: #85C1E9;">收录
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" title="项目搭建: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="项目搭建" style="background-color: #F5EEF8;">项目搭建
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/" title="高薪之路: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="高薪之路" style="background-color: #D7BDE2;">高薪之路
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/Demo/" title="Demo: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Demo" style="background-color: #D7BDE2;">Demo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E6%96%87%E4%BB%B6/" title="文件: 9">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="文件" style="background-color: #82E0AA;">文件
-                        <span class="tag-length">9</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/electron/" title="electron: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="electron" style="background-color: #F8C471;">electron
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数据库" style="background-color: #F9E79F;">数据库
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/hexo/tags/%E9%A1%B9%E7%9B%AE/" title="项目: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="项目" style="background-color: #85C1E9;">项目
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
 
-    
-    <link rel="stylesheet" type="text/css" href="/hexo/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
+<!-- TOC 悬浮按钮. -->
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
 </div>
 
-<script type="text/javascript" src="/hexo/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
 
-    $('#tag-wordcloud').jQCloud([{"text":"git","weight":1,"link":"/hexo/tags/git/"},{"text":"CSS","weight":1,"link":"/hexo/tags/CSS/"},{"text":"H5","weight":12,"link":"/hexo/tags/H5/"},{"text":"功能模块","weight":10,"link":"/hexo/tags/功能模块/"},{"text":"三方库","weight":14,"link":"/hexo/tags/三方库/"},{"text":"JavaScript","weight":4,"link":"/hexo/tags/JavaScript/"},{"text":"TypeScript","weight":5,"link":"/hexo/tags/TypeScript/"},{"text":"hexo","weight":1,"link":"/hexo/tags/hexo/"},{"text":"react","weight":3,"link":"/hexo/tags/react/"},{"text":"uni-app","weight":1,"link":"/hexo/tags/uni-app/"},{"text":"vue2.0","weight":1,"link":"/hexo/tags/vue2-0/"},{"text":"vue3.0","weight":2,"link":"/hexo/tags/vue3-0/"},{"text":"全局函数","weight":6,"link":"/hexo/tags/全局函数/"},{"text":"正则","weight":1,"link":"/hexo/tags/正则/"},{"text":"taro","weight":1,"link":"/hexo/tags/taro/"},{"text":"小程序","weight":1,"link":"/hexo/tags/小程序/"},{"text":"微信小程序","weight":1,"link":"/hexo/tags/微信小程序/"},{"text":"开发工具","weight":1,"link":"/hexo/tags/开发工具/"},{"text":"收录","weight":7,"link":"/hexo/tags/收录/"},{"text":"项目搭建","weight":2,"link":"/hexo/tags/项目搭建/"},{"text":"高薪之路","weight":4,"link":"/hexo/tags/高薪之路/"},{"text":"Demo","weight":1,"link":"/hexo/tags/Demo/"},{"text":"文件","weight":9,"link":"/hexo/tags/文件/"},{"text":"electron","weight":1,"link":"/hexo/tags/electron/"},{"text":"数据库","weight":1,"link":"/hexo/tags/数据库/"},{"text":"项目","weight":1,"link":"/hexo/tags/项目/"}], {
-        autoResize: true
+<script src="/hexo/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
     });
 </script>
 
     
 
 </main>
+
+
 
 
     <footer class="page-footer bg-color">

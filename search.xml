@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>git提交撤销本地注释</title>
+      <link href="/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/"/>
+      <url>/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/</url>
+      
+        <content type="html"><![CDATA[<p>git过滤本地注释，慎用，有时候拉取他人代码会把自己的代码也给干掉</p><a id="more"></a><p>找到文件.git的config用记事本打开，加入以下</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">[filter &quot;filter-js&quot;]clean &#x3D; sed &#39;&#x2F;\\&#x2F;\\*\\*\\s*@filter.*\\*&#x2F;d&#39;[filter &quot;filter-css&quot;]clean &#x3D; sed &#39;&#x2F;\\&#x2F;\\&#x2F;\\s*@filter.*&#x2F;d&#39;[filter &quot;filter-html&quot;]clean &#x3D; sed &#39;&#x2F;&lt;\\!--\\s*@filter.*--&gt;&#x2F;d&#39;[filter &quot;filter-vue&quot;]clean &#x3D; sed -e &#39;&#x2F;\\&#x2F;\\*\\*\\s*@filter.*\\*&#x2F;d&#39; -e &#39;&#x2F;\\&#x2F;\\&#x2F;\\s*@filter.*&#x2F;d&#39; -e &#39;&#x2F;&lt;\\!--\\s*@filter.*--&gt;&#x2F;d&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>找到文件.gitattributes</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">*.ts filter&#x3D;filter-js*.js filter&#x3D;filter-js*.css filter&#x3D;filter-css*.html filter&#x3D;filter-html*.vue filter&#x3D;filter-vue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>效果</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">本地vscode&#x2F;** @filter 我是注释 *&#x2F;const a &#x3D; 1远程const a &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><!-- more -->]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 收录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>三方库（npm包推送）</title>
       <link href="/hexo/2023/09/01/san-fang-ku-npm-bao-tui-song/"/>
       <url>/hexo/2023/09/01/san-fang-ku-npm-bao-tui-song/</url>
