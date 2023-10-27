@@ -4,6 +4,54 @@
   
     
     <entry>
+      <title>全局（表单校验规则收录）</title>
+      <link href="/hexo/2023/10/26/quan-ju-biao-dan-xiao-yan-gui-ze-shou-lu/"/>
+      <url>/hexo/2023/10/26/quan-ju-biao-dan-xiao-yan-gui-ze-shou-lu/</url>
+      
+        <content type="html"><![CDATA[<p>适用表单组件的校验规则收录, 表单规则使用rules直接集合封装</p><a id="more"></a><h4 id="手机号码、验证码"><a href="#手机号码、验证码" class="headerlink" title="手机号码、验证码"></a>手机号码、验证码</h4><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const phoneRules &#x3D; &#123;  phone: [    &#123; required: true, message: &#39;请输入手机号码&#39;, trigger: [&#39;blur&#39;, &#39;change&#39;] &#125;,    &#123; pattern: &#x2F;^1[3456789]\d&#123;9&#125;$&#x2F;, message: &#39;手机号码格式不正确&#39;, trigger: [&#39;blur&#39;, &#39;change&#39;] &#125;  ],  code: [    &#123; required: true, message: &#39;请输入验证码&#39;, trigger: [&#39;blur&#39;, &#39;change&#39;] &#125;,    &#123; pattern: &#x2F;^\d&#123;6&#125;$&#x2F;, message: &#39;验证码格式不正确&#39;, trigger: [&#39;blur&#39;, &#39;change&#39;] &#125;  ]&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="账号密码"><a href="#账号密码" class="headerlink" title="账号密码"></a>账号密码</h4><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const passRules &#x3D; &#123;  passOld: [&#123; required: true, message: &#39;请输入原密码&#39;, trigger: [&#39;blur&#39;, &#39;change&#39;] &#125;],  passNew: [    &#123; required: true, min: 6, max: 16, message: &#39;请输入新密码&#39;, trigger: [&#39;blur&#39;, &#39;change&#39;] &#125;,    &#123;      pattern: &#x2F;^(?&#x3D;.*\d)(?&#x3D;.*[a-zA-Z])(?&#x3D;.*[^\da-zA-Z\s]).&#123;6,16&#125;$&#x2F;,      message: &#39;密码需要字母、数字、特殊符号组合且长度在6到16位&#39;,      trigger: [&#39;blur&#39;, &#39;change&#39;]    &#125;  ],  passNewSame: [    &#123;       required: true,       validator: (rule, value, callback) &#x3D;&gt; &#123;        if (value &#x3D;&#x3D;&#x3D; &#39;&#39;) &#123;          callback(new Error(&#39;请再次输入密码&#39;))        &#125; else if (value !&#x3D;&#x3D; this.form.passNew) &#123;          callback(new Error(&#39;两次输入密码不一致!&#39;))        &#125; else &#123;          callback()        &#125;      &#125;,       trigger: [&#39;blur&#39;, &#39;change&#39;]     &#125;,  ]&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><!-- more -->]]></content>
+      
+      
+      <categories>
+          
+          <category> 函数 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 全局函数 </tag>
+            
+            <tag> 正则 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>收录（实现svg回显动态改变颜色）</title>
+      <link href="/hexo/2023/10/26/shou-lu-shi-xian-svg-hui-xian-dong-tai-gai-bian-yan-se/"/>
+      <url>/hexo/2023/10/26/shou-lu-shi-xian-svg-hui-xian-dong-tai-gai-bian-yan-se/</url>
+      
+        <content type="html"><![CDATA[<p>利用img标签回显svg实现改变颜色</p><a id="more"></a><p>img标签回显svg，在线svg链接同样适用</p><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">overflow</span><span class="token punctuation">:</span>hidden</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./demo.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>img添加动态style样式</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const style &#x3D; &#123;  filter: &#96;drop-shadow(-1000px 0px 0px $&#123;elementInfo.fill || &#39;black&#39;&#125;)&#96;,  transform: &#39;translateX(1000px)&#39;,&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>重点：<br>  filter属性 给图片生成一个一模一样的阴影<br>  transform 给原图移出可视区域（父元素overflow属性会看不见）<br>  overflow 父元素hidden超出隐藏<br>  drop-shadow 原图移出1000px，阴影位置-1000px，通过改变阴影颜色达到改变 图标svg颜色的 假象<br>缺点：不是所有svg适用，只适合透明背景的svg资源</p></blockquote><!-- more -->]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+            <tag> 收录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git提交撤销本地注释</title>
       <link href="/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/"/>
       <url>/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/</url>
@@ -13,6 +61,8 @@
       
       
         <tags>
+            
+            <tag> git </tag>
             
             <tag> 收录 </tag>
             
@@ -496,7 +546,7 @@
       
         <tags>
             
-            <tag> 项目搭建 </tag>
+            <tag> 项目 </tag>
             
         </tags>
       
@@ -514,6 +564,8 @@
       
       
         <tags>
+            
+            <tag> CSS </tag>
             
             <tag> 收录 </tag>
             
@@ -686,6 +738,8 @@
       
       
         <tags>
+            
+            <tag> CSS </tag>
             
             <tag> 收录 </tag>
             
@@ -1705,13 +1759,13 @@
       <link href="/hexo/2023/06/07/xiang-mu-bao-guan-li/"/>
       <url>/hexo/2023/06/07/xiang-mu-bao-guan-li/</url>
       
-        <content type="html"><![CDATA[<p>项目安装依赖准备、总结遇到的问题</p><a id="more"></a><h3 id="nrm镜像源管理工具"><a href="#nrm镜像源管理工具" class="headerlink" title="nrm镜像源管理工具"></a><font color="#08c">nrm镜像源管理工具</font></h3><p>安装成功，但是nrm ls查看源的时候，报以下错误</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Error [ERR_REQUIRE_ESM]: require() of ES Module D:\npm\node_modules\nrm\node_modules\open\index.js from D:\npm\node_modules\nrm\cli.js not supported.Instead change the require of index.js in D:\npm\node_modules\nrm\cli.js to a dynamic import() which is available in all CommonJS modules.at Object. (D:\npm\node_modules\nrm\cli.js:9:14) &#123;code: &#39;ERR_REQUIRE_ESM&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原因：应该使用 open 的 CommonJs规范的包 ，现在 open v9.0.0 是 ES Module 版本的包</p><p>解决方法：<font color="#08c">npm install -g nrm <a href="mailto:&#111;&#112;&#x65;&#110;&#x40;&#x38;&#46;&#52;&#46;&#50;">&#111;&#112;&#x65;&#110;&#x40;&#x38;&#46;&#52;&#46;&#50;</a> –save</font> 安装指定版本的包</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 获取镜像nrm ls# 使用镜像nrm use<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="pnpm使用"><a href="#pnpm使用" class="headerlink" title="pnpm使用"></a><font color="#08c">pnpm使用</font></h3><p>pnpm install 提示报错一些依赖没有成功安装上的时候，项目根目录建.npmrc文件，复制以下代码</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">shamefully-hoist: true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>官网说明：提升至根模块目录中意味着应用代码可以访问到幻影依赖，即使他们对解析策略做了不当的修改。当处理一些有缺陷的可插拔工具不能正确解析依赖关系时，此设置很有用。<br>补充：<a href="https://pnpm.io/zh/npmrc">npmrc官网</a></p><h3 id="nvm版本管理工具"><a href="#nvm版本管理工具" class="headerlink" title="nvm版本管理工具"></a><font color="#08c">nvm版本管理工具</font></h3><h4 id="node安装成功，npm报错、提示找不到命令"><a href="#node安装成功，npm报错、提示找不到命令" class="headerlink" title="node安装成功，npm报错、提示找不到命令"></a>node安装成功，npm报错、提示找不到命令</h4><p>需要手动下载与node对应版本的npm</p><p>npm下载地址：<a href="http://npm.taobao.org/mirrors/npm/">http://npm.taobao.org/mirrors/npm/</a> （下载对应版本的zip文件）<br>node版本对应npm版本：<a href="https://nodejs.org/zh-cn/download/releases/">https://nodejs.org/zh-cn/download/releases/</a></p><p>最后将下载的npm文件夹里面的bin目录下的npm和npm.cmd两个文件复制一份到对应node版本的根目录下。</p><h3 id="rimraf快速删除文件"><a href="#rimraf快速删除文件" class="headerlink" title="rimraf快速删除文件"></a><font color="#08c">rimraf快速删除文件</font></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ npm install rimraf -g$ rimraf node_modules #删除node_modules, 管你什么权限不够、资源文件占用, 我给你通通删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="node-sass-版本对应"><a href="#node-sass-版本对应" class="headerlink" title="node-sass 版本对应"></a><font color="#08c">node-sass 版本对应</font></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ERR! gyp ERR! cwd D:\workspace\node_modules\node-sass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>nodejs与node-sass版本不匹配</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># node与node-sass版本对应表# node版本 node-sass版本node 16——6.0+node 15——5.0+node 14——4.14+node13—— 4.13+,&lt;5.0node12—— 4.12+node11—— 4.10+,&lt;5.0node10—— 4.9+,&lt;5.0node8——4.5.3+,&lt;5.0node&lt;8—— &lt;5.0# sass-loader与node-sass版本对应表# sass-loader版本 node-sass版本sass-loader 4.1.1—— node-sass 4.3.0sass-loader 7.0.3—— node-sass 4.7.2sass-loader 7.3.1—— node-sass 4.7.2sass-loader 7.3.1—— node-sass 4.14.1sass-loader 10.0.1—— node-sass 6.0.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>项目安装依赖准备、总结遇到的问题</p><a id="more"></a><h3 id="nrm镜像源管理工具"><a href="#nrm镜像源管理工具" class="headerlink" title="nrm镜像源管理工具"></a><font color="#08c">nrm镜像源管理工具</font></h3><p>安装成功，但是nrm ls查看源的时候，报以下错误</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Error [ERR_REQUIRE_ESM]: require() of ES Module D:\npm\node_modules\nrm\node_modules\open\index.js from D:\npm\node_modules\nrm\cli.js not supported.Instead change the require of index.js in D:\npm\node_modules\nrm\cli.js to a dynamic import() which is available in all CommonJS modules.at Object. (D:\npm\node_modules\nrm\cli.js:9:14) &#123;code: &#39;ERR_REQUIRE_ESM&#39;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原因：应该使用 open 的 CommonJs规范的包 ，现在 open v9.0.0 是 ES Module 版本的包</p><p>解决方法：<font color="#08c">npm install -g nrm <a href="mailto:&#x6f;&#x70;&#x65;&#110;&#64;&#56;&#x2e;&#x34;&#x2e;&#50;">&#x6f;&#x70;&#x65;&#110;&#64;&#56;&#x2e;&#x34;&#x2e;&#50;</a> –save</font> 安装指定版本的包</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 获取镜像nrm ls# 使用镜像nrm use<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="pnpm使用"><a href="#pnpm使用" class="headerlink" title="pnpm使用"></a><font color="#08c">pnpm使用</font></h3><p>pnpm install 提示报错一些依赖没有成功安装上的时候，项目根目录建.npmrc文件，复制以下代码</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">shamefully-hoist: true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>官网说明：提升至根模块目录中意味着应用代码可以访问到幻影依赖，即使他们对解析策略做了不当的修改。当处理一些有缺陷的可插拔工具不能正确解析依赖关系时，此设置很有用。<br>补充：<a href="https://pnpm.io/zh/npmrc">npmrc官网</a></p><h3 id="nvm版本管理工具"><a href="#nvm版本管理工具" class="headerlink" title="nvm版本管理工具"></a><font color="#08c">nvm版本管理工具</font></h3><h4 id="node安装成功，npm报错、提示找不到命令"><a href="#node安装成功，npm报错、提示找不到命令" class="headerlink" title="node安装成功，npm报错、提示找不到命令"></a>node安装成功，npm报错、提示找不到命令</h4><p>需要手动下载与node对应版本的npm</p><p>npm下载地址：<a href="http://npm.taobao.org/mirrors/npm/">http://npm.taobao.org/mirrors/npm/</a> （下载对应版本的zip文件）<br>node版本对应npm版本：<a href="https://nodejs.org/zh-cn/download/releases/">https://nodejs.org/zh-cn/download/releases/</a></p><p>最后将下载的npm文件夹里面的bin目录下的npm和npm.cmd两个文件复制一份到对应node版本的根目录下。</p><h3 id="rimraf快速删除文件"><a href="#rimraf快速删除文件" class="headerlink" title="rimraf快速删除文件"></a><font color="#08c">rimraf快速删除文件</font></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ npm install rimraf -g$ rimraf node_modules #删除node_modules, 管你什么权限不够、资源文件占用, 我给你通通删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="node-sass-版本对应"><a href="#node-sass-版本对应" class="headerlink" title="node-sass 版本对应"></a><font color="#08c">node-sass 版本对应</font></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ERR! gyp ERR! cwd D:\workspace\node_modules\node-sass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>nodejs与node-sass版本不匹配</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># node与node-sass版本对应表# node版本 node-sass版本node 16——6.0+node 15——5.0+node 14——4.14+node13—— 4.13+,&lt;5.0node12—— 4.12+node11—— 4.10+,&lt;5.0node10—— 4.9+,&lt;5.0node8——4.5.3+,&lt;5.0node&lt;8—— &lt;5.0# sass-loader与node-sass版本对应表# sass-loader版本 node-sass版本sass-loader 4.1.1—— node-sass 4.3.0sass-loader 7.0.3—— node-sass 4.7.2sass-loader 7.3.1—— node-sass 4.7.2sass-loader 7.3.1—— node-sass 4.14.1sass-loader 10.0.1—— node-sass 6.0.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       
         <tags>
             
-            <tag> 项目搭建 </tag>
+            <tag> 项目 </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="https://github.com/rewhtie/hexo/atom.xml" rel="self"/>
   
   <link href="https://github.com/rewhtie/hexo/"/>
-  <updated>2023-10-10T09:31:25.369Z</updated>
+  <updated>2023-10-26T08:19:06.932Z</updated>
   <id>https://github.com/rewhtie/hexo/</id>
   
   <author>
@@ -17,17 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>全局（表单校验规则收录）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/10/26/quan-ju-biao-dan-xiao-yan-gui-ze-shou-lu/"/>
+    <id>https://github.com/rewhtie/hexo/2023/10/26/quan-ju-biao-dan-xiao-yan-gui-ze-shou-lu/</id>
+    <published>2023-10-26T08:00:49.000Z</published>
+    <updated>2023-10-26T08:19:06.932Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;适用表单组件的校验规则收录, 表单规则使用rules直接集合封装&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="函数" scheme="https://github.com/rewhtie/hexo/categories/%E5%87%BD%E6%95%B0/"/>
+    
+    
+    <category term="全局函数" scheme="https://github.com/rewhtie/hexo/tags/%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0/"/>
+    
+    <category term="正则" scheme="https://github.com/rewhtie/hexo/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>收录（实现svg回显动态改变颜色）</title>
+    <link href="https://github.com/rewhtie/hexo/2023/10/26/shou-lu-shi-xian-svg-hui-xian-dong-tai-gai-bian-yan-se/"/>
+    <id>https://github.com/rewhtie/hexo/2023/10/26/shou-lu-shi-xian-svg-hui-xian-dong-tai-gai-bian-yan-se/</id>
+    <published>2023-10-26T07:39:34.000Z</published>
+    <updated>2023-10-26T07:54:59.881Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;利用img标签回显svg实现改变颜色&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="CSS" scheme="https://github.com/rewhtie/hexo/tags/CSS/"/>
+    
+    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git提交撤销本地注释</title>
     <link href="https://github.com/rewhtie/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/"/>
     <id>https://github.com/rewhtie/hexo/2023/10/10/shou-lu-git-ti-jiao-che-xiao-ben-di-zhu-shi/</id>
     <published>2023-10-10T09:26:46.000Z</published>
-    <updated>2023-10-10T09:31:25.369Z</updated>
+    <updated>2023-10-26T07:56:28.832Z</updated>
     
     
     <summary type="html">&lt;p&gt;git过滤本地注释，慎用，有时候拉取他人代码会把自己的代码也给干掉&lt;/p&gt;</summary>
     
     
     
+    
+    <category term="git" scheme="https://github.com/rewhtie/hexo/tags/git/"/>
     
     <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
     
@@ -353,42 +395,6 @@
     
     
     <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>问答题</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/07/gao-xin-wen-da-ti/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/07/gao-xin-wen-da-ti/</id>
-    <published>2023-06-07T12:10:23.550Z</published>
-    <updated>2023-07-12T08:04:02.607Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最接近的一次机会,要好好把握住呀&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="知识点" scheme="https://github.com/rewhtie/hexo/categories/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    
-    
-    <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>优雅！实在是太优雅了</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/07/shou-lu-yan-ling-zhu/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/07/shou-lu-yan-ling-zhu/</id>
-    <published>2023-06-07T12:10:23.549Z</published>
-    <updated>2023-06-08T11:25:06.674Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;扎心，震撼，感动，不舍，热血，上头&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="收录" scheme="https://github.com/rewhtie/hexo/tags/%E6%94%B6%E5%BD%95/"/>
     
   </entry>
   
