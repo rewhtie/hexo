@@ -175,6 +175,7 @@ categories: 开发语言
         console.log(a) //打印[1,2,3,4,5,6]
         console.log(b) //打印[]
     ```
+
 <font color="red">*注：假如参数一正一负，也会先和length相加，再进行截取的操作</font>
 - <font color="#08c" size=3>push()函数将元素添加进数组的尾部</font>
 
@@ -286,6 +287,30 @@ categories: 开发语言
     两者都是返回true，some传的是回调函数，includes传的是变量
     例如：[1,2,3].some( i => i*2===2)可以加前缀处理
 
+```
+
+- <font color="#08c" size=3>flatMap()函数：将一个数组对象数组，变成数组</font>
+
+```ts
+const dateOptions = () => {
+    const dateArr = [
+        {
+            time: [
+                { name: '2023', val: 1 },
+                { name: '2024', val: 2 }
+            ]
+        },
+        {
+            time: [
+                { name: '2025', val: 3 },
+                { name: '2026', val: 4 }
+            ]
+        },
+    ].flatMap(obj => obj.time)
+    return dateArr
+    // console.log([{ name: '2023', val: 1 }, { name: '2024', val: 2 },{ name: '2025', val: 3 },  { name: '2026', val: 4 } ])
+}
+// 
 ```
 
 ## 数组元素遍历过滤
