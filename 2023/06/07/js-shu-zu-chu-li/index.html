@@ -403,21 +403,21 @@ const a = [1,2,3];
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-01
+                    2023-11-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -662,6 +662,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
 两者都是返回<span class="token boolean">true</span>，some传的是回调函数，includes传的是变量
 例如：<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span> <span class="token parameter">i</span> <span class="token operator">=></span> i<span class="token operator">*</span><span class="token number">2</span><span class="token operator">===</span><span class="token number">2</span><span class="token punctuation">)</span>可以加前缀处理
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><font color="#08c" size="3">flatMap()函数：将一个数组对象数组，变成数组</font></li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const dateOptions &#x3D; () &#x3D;&gt; &#123;
+    const dateArr &#x3D; [
+        &#123;
+            time: [
+                &#123; name: &#39;2023&#39;, val: 1 &#125;,
+                &#123; name: &#39;2024&#39;, val: 2 &#125;
+            ]
+        &#125;,
+        &#123;
+            time: [
+                &#123; name: &#39;2025&#39;, val: 3 &#125;,
+                &#123; name: &#39;2026&#39;, val: 4 &#125;
+            ]
+        &#125;,
+    ].flatMap(obj &#x3D;&gt; obj.time)
+    return dateArr
+    &#x2F;&#x2F; console.log([&#123; name: &#39;2023&#39;, val: 1 &#125;, &#123; name: &#39;2024&#39;, val: 2 &#125;,&#123; name: &#39;2025&#39;, val: 3 &#125;,  &#123; name: &#39;2026&#39;, val: 4 &#125; ])
+&#125;
+&#x2F;&#x2F; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="数组元素遍历过滤"><a href="#数组元素遍历过滤" class="headerlink" title="数组元素遍历过滤"></a>数组元素遍历过滤</h2><ul>
 <li>方法一 forEach 循环遍历 replace 替换字符串 push 添加进去和 splice 再删除进行过滤（小白误区）</li>
 </ul>
@@ -1249,7 +1271,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">60.1k</span>
+                        class="white-color">60.2k</span>
             
             
             
