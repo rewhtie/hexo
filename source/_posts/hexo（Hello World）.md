@@ -143,7 +143,7 @@ More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 $ ssh-keygen -t rsa -C "comment"
 ```
 
-记事本打开复制，到github网站的setting下找到钥匙图标 新建秘钥 复制黏贴生成的秘钥，记得勾选读写权限
+C盘ssh文件夹记事本打开复制，到github网站的setting下找到钥匙图标 新建秘钥 复制黏贴生成的秘钥，记得勾选读写权限
 
 回到hexo根目录下的_config.yml
 
