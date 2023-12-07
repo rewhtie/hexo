@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/rewhtie/hexo/hexo/2023/12/07/quan-ju-huo-qu-shi-pin-di-yi-zheng-tu-pian/</loc>
+    <lastmod>2023-12-07</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rewhtie/hexo/hexo/2023/06/07/hexo-hello-world/</loc>
+    <lastmod>2023-12-04</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/rewhtie/hexo/hexo/2023/06/07/js-shu-zu-chu-li/</loc>
     <lastmod>2023-11-24</lastmod>
   </url>
@@ -322,10 +330,6 @@
   </url>
   <url>
     <loc>https://github.com/rewhtie/hexo/hexo/2023/06/07/h5-webview-shuang-tong-xin/</loc>
-    <lastmod>2023-06-08</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/rewhtie/hexo/hexo/2023/06/07/hexo-hello-world/</loc>
     <lastmod>2023-06-08</lastmod>
   </url>
   <url>
