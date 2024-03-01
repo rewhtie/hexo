@@ -6,7 +6,7 @@
   <link href="https://github.com/rewhtie/hexo/atom.xml" rel="self"/>
   
   <link href="https://github.com/rewhtie/hexo/"/>
-  <updated>2023-12-07T08:56:44.275Z</updated>
+  <updated>2024-03-01T01:48:14.879Z</updated>
   <id>https://github.com/rewhtie/hexo/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uni-app（横竖屏切换）</title>
+    <link href="https://github.com/rewhtie/hexo/2024/03/01/uni-app-heng-shu-ping-qie-huan/"/>
+    <id>https://github.com/rewhtie/hexo/2024/03/01/uni-app-heng-shu-ping-qie-huan/</id>
+    <published>2024-03-01T01:28:12.000Z</published>
+    <updated>2024-03-01T01:48:14.879Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;vue3、uni-app A页面竖屏、B页面横屏，代码示例&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="uni-app" scheme="https://github.com/rewhtie/hexo/tags/uni-app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>H5（横屏处理）</title>
+    <link href="https://github.com/rewhtie/hexo/2024/03/01/h5-heng-ping-chu-li/"/>
+    <id>https://github.com/rewhtie/hexo/2024/03/01/h5-heng-ping-chu-li/</id>
+    <published>2024-03-01T01:02:32.000Z</published>
+    <updated>2024-03-01T01:25:36.166Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;vue3、 uni-app示例代码（思路：容器元素旋转90度）&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="H5" scheme="https://github.com/rewhtie/hexo/tags/H5/"/>
+    
+  </entry>
   
   <entry>
     <title>全局（获取视频第一帧图片）</title>
@@ -357,44 +391,6 @@
     
     
     <category term="功能模块" scheme="https://github.com/rewhtie/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聚焦放大镜</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-ju-jiao-fang-da-jing/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/08/gong-neng-mo-kuai-ju-jiao-fang-da-jing/</id>
-    <published>2023-06-08T04:00:00.000Z</published>
-    <updated>2023-07-12T08:09:31.082Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;实现一个窗口拖拽移动并且能自由拉伸宽高的元素区域，区域内的元素根据比例放大&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="组件" scheme="https://github.com/rewhtie/hexo/categories/%E7%BB%84%E4%BB%B6/"/>
-    
-    
-    <category term="功能模块" scheme="https://github.com/rewhtie/hexo/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS常问</title>
-    <link href="https://github.com/rewhtie/hexo/2023/06/07/gao-xin-html5-xin-zeng-yuan-su/"/>
-    <id>https://github.com/rewhtie/hexo/2023/06/07/gao-xin-html5-xin-zeng-yuan-su/</id>
-    <published>2023-06-07T12:10:23.550Z</published>
-    <updated>2023-07-12T08:03:45.202Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;经常有的一些 CSS 效果实现，包括问的呀，写的呀，问来问去都是这些基本&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="知识点" scheme="https://github.com/rewhtie/hexo/categories/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    
-    
-    <category term="高薪之路" scheme="https://github.com/rewhtie/hexo/tags/%E9%AB%98%E8%96%AA%E4%B9%8B%E8%B7%AF/"/>
     
   </entry>
   

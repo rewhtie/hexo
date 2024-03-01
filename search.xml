@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>uni-app（横竖屏切换）</title>
+      <link href="/hexo/2024/03/01/uni-app-heng-shu-ping-qie-huan/"/>
+      <url>/hexo/2024/03/01/uni-app-heng-shu-ping-qie-huan/</url>
+      
+        <content type="html"><![CDATA[<p>vue3、uni-app A页面竖屏、B页面横屏，代码示例</p><a id="more"></a><h4 id="没营养的配置项"><a href="#没营养的配置项" class="headerlink" title="没营养的配置项"></a>没营养的配置项</h4><p>mainifest.json文件 flexible || screenOrientation</p><pre class="line-numbers language-json" data-language="json"><code class="language-json">&#123;&quot;app-plus&quot;: &#123;&quot;flexible&quot;: true,&quot;screenOrientation&quot;: [&quot;portrait-primary&quot;, &quot;landscape-primary&quot;, &quot;portrait-secondary&quot;, &quot;landscape-secondary&quot;],&#125;,&quot;vueVersion&quot;: &quot;3&quot;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="A页面"><a href="#A页面" class="headerlink" title="A页面"></a>A页面</h4><p>A页面问题不大，难的在B页面</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">onShow(() &#x3D;&gt; &#123;  &#x2F;&#x2F; #ifdef APP-PLUS  plus.screen.lockOrientation(&#39;portrait-primary&#39;)  &#x2F;&#x2F; #endif&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="B页面"><a href="#B页面" class="headerlink" title="B页面"></a>B页面</h4><blockquote><p>同A页面强制设置横屏，需要用到onWindowResize监听窗口变化，（因为我的使用了rpx单位）<br>rpx 是根据屏幕宽度来计算的，本来300<em>600的变成 600</em>300，会导致 使用rpx的字体会变大，间距也是<br>所以得计算宽高之间的比例，将使用rpx的元素 等比例 缩小（魅族手机好像失效，模拟器完美适配）<br>计算公式：info.screenHeight / info.screenWidth （因为横屏肯定是高 比 宽 大，不存在其他情况）</p></blockquote><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">onShow(() &#x3D;&gt; &#123;&#x2F;&#x2F; #ifdef APP-PLUSplus.screen.lockOrientation(&#39;landscape-primary&#39;)uni.onWindowResize(windowResizeCallback)&#x2F;&#x2F; #endif&#125;)const windowResizeCallback &#x3D; () &#x3D;&gt; &#123;const info &#x3D; uni.getWindowInfo()let zoom &#x3D; (info.screenHeight &#x2F; info.screenWidth) * 100 + &#39;%&#39;let style &#x3D; &#123;zoom: zoom&#125;maxRPX.value &#x3D; style&#125;const contentStyle &#x3D; ref(&#123;&#125;)&#x2F;&#x2F; 为了示例好区分，故意使用 onMounted 生命周期onMounted(async () &#x3D;&gt; &#123;contentStyle.value &#x3D; &#123;transformOrigin: &#96;0% 0%&#96;,width: &#39;100%&#39;,height: &#39;100%&#39;,position: &#39;fixed&#39;&#125;&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span> <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">contentStyle</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><!-- more -->]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> uni-app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>H5（横屏处理）</title>
+      <link href="/hexo/2024/03/01/h5-heng-ping-chu-li/"/>
+      <url>/hexo/2024/03/01/h5-heng-ping-chu-li/</url>
+      
+        <content type="html"><![CDATA[<p>vue3、 uni-app示例代码（思路：容器元素旋转90度）</p><a id="more"></a><p><font color="#08c">将整个元素旋转90度，设置旋转的中心，将元素定位到页面正确的位置</font></p><blockquote><p>1、先获取屏幕的宽度，例举：350px<br>2、元素填充整个视图是 width:100vw; height: 100vh<br>3、将元素 旋转90deg，将旋转中心点设置 （目前是竖屏、所以 左上角是） transformOrigin: <code>0% 0%</code><br>4、这时候 看不到元素了，因为被旋转到了视图外，所以得定位回到 视图内 position: ‘fixed’; left: info.windowWidth + ‘px’（容器元素是left，而不是top，这里会有误区）<br>5、这时候 就可以 宽高进行互换了    width: ‘100vh’; height: ‘100vw’</p></blockquote><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">onMounted(async () &#x3D;&gt; &#123;const info &#x3D; uni.getWindowInfo()contentStyle.value &#x3D; &#123;transform: &#39;rotateZ(90deg)&#39;,transformOrigin: &#96;0% 0%&#96;,width: &#39;100vh&#39;,height: &#39;100vw&#39;,position: &#39;fixed&#39;,left: info.windowWidth + &#39;px&#39;&#125;&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><font color="red">最好是使用rem单位，设置根元素font-size，不然样式会错乱</font><br><font color="red">在uni-app使用rpx单位，rpx是根据屏幕宽度进行比例换算的，这时候使用到rpx的地方都会奇大无比，具体看（uni-app横竖屏切换）</font></p><!-- more -->]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> H5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>全局（获取视频第一帧图片）</title>
       <link href="/hexo/2023/12/07/quan-ju-huo-qu-shi-pin-di-yi-zheng-tu-pian/"/>
       <url>/hexo/2023/12/07/quan-ju-huo-qu-shi-pin-di-yi-zheng-tu-pian/</url>
